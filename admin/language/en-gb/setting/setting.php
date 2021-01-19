@@ -32,6 +32,14 @@ $_['text_general']                   = 'General';
 $_['text_security']                  = 'Security';
 $_['text_upload']                    = 'Uploads';
 $_['text_error']                     = 'Error Handling';
+$_['text_reward_rate']               = 'Input Reward Rate';
+$_['entry_reward_point']             = 'Input Reward Point';
+$_['text_percent']                   = 'Percent';
+$_['text_fixed']                     = 'Fixed';
+$_['text_min']                       = 'Input Minimum Value';
+$_['text_max']                       = 'Input Maximum Value';
+$_['text_percents']                  = 'Input Percent Value';
+$_['text_fix']                       = 'Input Fixed Value';
 
 // Entry
 $_['entry_meta_title']               = 'Meta Title';
@@ -122,8 +130,10 @@ $_['entry_error_display']            = 'Display Errors';
 $_['entry_error_log']                = 'Log Errors';
 $_['entry_error_filename']           = 'Error Log Filename';
 $_['entry_status']                   = 'Status';
+$_['entry_value_count']            = 'Set Amount & Percent ';
 
 // Help
+$_['help_reward_set']                = 'Set the min value for minimum reward';
 $_['help_geocode']                   = 'Please enter your store location geocode manually.';
 $_['help_open']                      = 'Fill in your store\'s opening times.';
 $_['help_comment']                   = 'This field is for any special notes you would like to tell the customer i.e. Store does not accept cheques.';

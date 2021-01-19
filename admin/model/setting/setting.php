@@ -51,4 +51,24 @@ class ModelSettingSetting extends Model {
 			$this->db->query("UPDATE " . DB_PREFIX . "setting SET `value` = '" . $this->db->escape(json_encode($value)) . "', serialized = '1' WHERE `code` = '" . $this->db->escape($code) . "' AND `key` = '" . $this->db->escape($key) . "' AND store_id = '" . (int)$store_id . "'");
 		}
 	}
+		public function getCustomerRewardSetting() {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "rewards_setting ORDER BY id ASC LIMIT 1");
+		return $query->row;
+	}
+	public function updateCustomerRewardSetting($rewardValue) {				
+		$query = "UPDATE ". DB_PREFIX ."rewards_setting SET reward_point=". $rewardValue ." WHERE id =1";
+		return $this->db->query($query);
+	}
+	
+	public function insertRewardRate($data){
+
+		$this->db->query("INSERT INTO " . DB_PREFIX . "reward_rate_setting SET 
+			min_amount 		 = '" . $this->db->escape($data['min_amount']) . "',
+			max_amount 		 = '" . $this->db->escape($data['max_amount']) . "',
+			percentage_value = '" . $this->db->escape($data['percentage_value']) . "',  
+			fixed_value 	 = '" . $this->db->escape($data['fixed_value']) . "'");
+
+    	$id = $this->db->getLastId();
+        return $id;
+    }
 }

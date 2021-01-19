@@ -1,18 +1,18 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://protidin.com.bd/admin/');
-define('HTTP_CATALOG', 'http://protidin.com.bd/');
+define('HTTP_SERVER', 'http://localhost/protidin/admin/');
+define('HTTP_CATALOG', 'http://localhost/protidin/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://protidin.com.bd/admin/');
-define('HTTPS_CATALOG', 'http://protidin.com.bd/');
+define('HTTPS_SERVER', 'http://localhost/protidin/admin/');
+define('HTTPS_CATALOG', 'http://localhost/protidin/');
 
 // DIR
-define('DIR_APPLICATION', '/home/azhkhn/public_html/protidin.com.bd/admin/');
-define('DIR_SYSTEM', '/home/azhkhn/public_html/protidin.com.bd/system/');
-define('DIR_IMAGE', '/home/azhkhn/public_html/protidin.com.bd/image/');
+define('DIR_APPLICATION', '/opt/lampp/htdocs/protidin/admin/');
+define('DIR_SYSTEM', '/opt/lampp/htdocs/protidin/system/');
+define('DIR_IMAGE', '/opt/lampp/htdocs/protidin/image/');
 define('DIR_STORAGE', DIR_SYSTEM . 'storage/');
-define('DIR_CATALOG', '/home/azhkhn/public_html/protidin.com.bd/catalog/');
+define('DIR_CATALOG', '/opt/lampp/htdocs/protidin/catalog/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');
@@ -26,8 +26,8 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 // DB
 define('DB_DRIVER', 'mpdo');
 define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'protidin');
-define('DB_PASSWORD', 'protidin@Admin');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
 define('DB_DATABASE', 'protidin');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'pro_');

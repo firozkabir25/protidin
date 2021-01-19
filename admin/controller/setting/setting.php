@@ -10,6 +10,9 @@ class ControllerSettingSetting extends Controller {
 		$this->load->model('setting/setting');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+		
+			$this->model_setting_setting->updateCustomerRewardSetting($this->request->post['config_reward_point']);
+			$this->model_setting_setting->insertRewardRate($this->request->post);
 			$this->model_setting_setting->editSetting('config', $this->request->post);
 
 			if ($this->config->get('config_currency_auto')) {

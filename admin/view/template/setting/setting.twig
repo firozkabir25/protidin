@@ -37,6 +37,7 @@
             <li><a href="#tab-image" data-toggle="tab">{{ tab_image }}</a></li>
             <li><a href="#tab-mail" data-toggle="tab">{{ tab_mail }}</a></li>
             <li><a href="#tab-server" data-toggle="tab">{{ tab_server }}</a></li>
+            <li><a href="#tab-wallet" data-toggle="tab">{{ tab_wallet }}</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab-general">
@@ -1347,8 +1348,46 @@
                     <div class="text-danger">{{ error_log }}</div>
                     {% endif %} </div>
                 </div>
+              </fieldset>              
+            </div>
+            
+             {#------Wallet------ #}
+              <div class="tab-pane" id="tab-wallet">
+              <fieldset>
+                  <legend>{{ text_reward_rate }}</legend>
+                  <div class="form-group required">
+                    <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="{{ help_reward_set }}">{{ entry_value_count }}</span></label>
+                    <div id="add_more" class="col-sm-10">
+                      <div>
+                          <select class="form-control-reward" name="select_name[]">
+                            <option value="1" >{{text_percent}}</option>
+                            <option value="2" >{{text_fixed}}</option>
+                          </select>
+                          <input type="text" value="" name="min_amount" placeholder="{{text_min}}" class="form-control-reward"/>
+                          <input type="text" value="" name="max_amount" placeholder="{{text_max}}" class="form-control-reward"/>
+                          <input type="text" value="" name="percentage_value" placeholder="{{text_percents}}" class="form-control-reward"/>
+                          <input type="text" value="" name="fixed_value"  placeholder="{{text_fix}}" class="form-control-reward"/>            
+                      </div>
+                       <div>
+                          <button type="button" id="add" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+                       </div>
+                    </div>
+                  </div>
+              </fieldset>
+              <fieldset>
+                  <legend>{{ entry_reward_point }}</legend>
+                  <div class="form-group required">
+                      <label class="col-sm-2 control-label" for="input-reward-point">{{ entry_reward_point }}</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="config_reward_point" value="{{ config_reward_point }}" placeholder="{{ entry_reward_point }}" id="input-reward-point" class="form-control" />
+                            {% if error_reward_point %}
+                            <div class="text-danger">{{ error_reward_point }}</div>
+                            {% endif %} 
+                        </div>
+                  </div>
               </fieldset>
             </div>
+            
           </div>
         </form>
       </div>
@@ -1415,5 +1454,24 @@ $('select[name=\'config_country_id\']').on('change', function() {
 });
 
 $('select[name=\'config_country_id\']').trigger('change');
-//--></script></div>
+//--></script>
+<script type="text/javascript"><!--
+$(document).ready(function() {
+     $("#add").click(function(){
+       $("#add_more").append( '<div>'+
+          '<select class="form-control-reward" name="select_name[]">'+
+              '<option value="">{{text_percent}}</option>'+
+              '<option value="">{{text_fixed}}</option>'+
+          '</select>'+
+              '<input type="text" value="" name="min_value[]" placeholder="{{text_min}}" id="" class="form-control-reward"/>'+
+              '<input type="" value="" name="max_value[]" placeholder="{{text_max}}" id="" class="form-control-reward"/>'+
+              '<input type="text" name="percent_value[]" value="" placeholder="{{text_percents}}" id="" class="form-control-reward"/>'+
+              '<input type="text" name="fixed_value[]" value="" placeholder="{{text_fix}}" id="" class="form-control-reward"/>'+ 
+            '</div>');
+   });
+});
+
+
+//--></script>
+</div>
 {{ footer }} 

@@ -468,8 +468,28 @@ class ControllerCheckoutCart extends Controller {
 
 				array_multisort($sort_order, SORT_ASC, $totals);
 			}
+			
+				//---------Wallet Percent-------------//
+			if ($this->customer->isLogged()){
+				$deduction = $this->model_account_wallet->getDeductionRate();
+				$deductionrate = $deduction['deduction_rate'];
+				
+				$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
+				$walletpoint = $point['reward_point'];
+				$percent = $walletpoint*$deductionrate/100;
+				}
+				else {
+					$percent = 0;
+				}
 
-			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+				if($total>0){
+					$totalvalue = $total - $percent;
+				}
+				else{
+					$totalvalue = 0;
+				}
+
+			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($totalvalue, $this->session->data['currency']));
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
