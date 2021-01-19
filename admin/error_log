@@ -1,0 +1,7 @@
+[07-Jan-2021 16:06:10 UTC] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Template "extension/soconfig/options_stores.twig" is not defined in "extension/soconfig/soconfig.twig" at line 68. in /home/azhkhn/public_html/protidin.com.bd/system/storage/vendor/twig/twig/src/Loader/ArrayLoader.php:70
+Stack trace:
+#0 /home/azhkhn/public_html/protidin.com.bd/system/storage/vendor/twig/twig/src/Environment.php(299): Twig\Loader\ArrayLoader->getCacheKey('extension/socon...')
+#1 /home/azhkhn/public_html/protidin.com.bd/system/storage/vendor/twig/twig/src/Environment.php(381): Twig\Environment->getTemplateClass('extension/socon...')
+#2 /home/azhkhn/public_html/protidin.com.bd/system/storage/vendor/twig/twig/src/Template.php(333): Twig\Environment->loadTemplate('extension/socon...', NULL)
+#3 /home/azhkhn/public_html/protidin.com.bd/system/storage/cache/template/08/08c74339674adc67361ba0a34d20c3be449c968f0e9c3d0f231caf446be51ae5.php(213): Twig\Template->loadTemplate('extension/socon...', 'extension/socon...', 68)
+#4 /home/azhkhn/public_html/protidin.com.bd/system/ in /home/azhkhn/public_html/protidin.com.bd/system/storage/vendor/twig/twig/src/Loader/ArrayLoader.php on line 70
