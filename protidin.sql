@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.4
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jan 19, 2021 at 03:27 AM
--- Server version: 5.6.49-cll-lve
--- PHP Version: 7.3.6
+-- Host: localhost
+-- Generation Time: Jan 19, 2021 at 02:34 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.3.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -38,8 +37,8 @@ CREATE TABLE `pro_address` (
   `address_2` varchar(128) NOT NULL,
   `city` varchar(128) NOT NULL,
   `postcode` varchar(10) NOT NULL,
-  `country_id` int(11) NOT NULL DEFAULT '0',
-  `zone_id` int(11) NOT NULL DEFAULT '0',
+  `country_id` int(11) NOT NULL DEFAULT 0,
+  `zone_id` int(11) NOT NULL DEFAULT 0,
   `custom_field` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -241,7 +240,7 @@ CREATE TABLE `pro_banner_image` (
   `title` varchar(64) NOT NULL,
   `link` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `sort_order` int(3) NOT NULL DEFAULT '0'
+  `sort_order` int(3) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -291,10 +290,10 @@ CREATE TABLE `pro_cart` (
 CREATE TABLE `pro_category` (
   `category_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `parent_id` int(11) NOT NULL DEFAULT 0,
   `top` tinyint(1) NOT NULL,
   `column` int(3) NOT NULL,
-  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `sort_order` int(3) NOT NULL DEFAULT 0,
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
@@ -584,7 +583,7 @@ CREATE TABLE `pro_country` (
   `iso_code_3` varchar(3) NOT NULL,
   `address_format` text NOT NULL,
   `postcode_required` tinyint(1) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1'
+  `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -874,9 +873,9 @@ CREATE TABLE `pro_coupon` (
 --
 
 INSERT INTO `pro_coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
-(4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2014-01-01', '2020-01-01', 10, '10', 0, '2009-01-27 13:55:03'),
-(5, 'Free Shipping', '3333', 'P', 0.0000, 0, 1, 100.0000, '2014-01-01', '2014-02-01', 10, '10', 0, '2009-03-14 21:13:53'),
-(6, '-10.00 Discount', '1111', 'F', 10.0000, 0, 0, 10.0000, '2014-01-01', '2020-01-01', 100000, '10000', 0, '2009-03-14 21:15:18');
+(4, '-10% Discount', '2222', 'P', '10.0000', 0, 0, '0.0000', '2014-01-01', '2020-01-01', 10, '10', 0, '2009-01-27 13:55:03'),
+(5, 'Free Shipping', '3333', 'P', '0.0000', 0, 1, '100.0000', '2014-01-01', '2014-02-01', 10, '10', 0, '2009-03-14 21:13:53'),
+(6, '-10.00 Discount', '1111', 'F', '10.0000', 0, 0, '10.0000', '2014-01-01', '2020-01-01', 100000, '10000', 0, '2009-03-14 21:15:18');
 
 -- --------------------------------------------------------
 
@@ -940,7 +939,7 @@ CREATE TABLE `pro_currency` (
 
 INSERT INTO `pro_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
 (1, 'Pound Sterling', 'GBP', '£', '', '2', 0.61250001, 1, '2014-09-25 14:40:00'),
-(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2021-01-18 07:17:41'),
+(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2021-01-19 12:42:37'),
 (3, 'Euro', 'EUR', '', '€', '2', 0.78460002, 1, '2014-09-25 14:40:00');
 
 -- --------------------------------------------------------
@@ -952,7 +951,7 @@ INSERT INTO `pro_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symb
 CREATE TABLE `pro_customer` (
   `customer_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `language_id` int(11) NOT NULL,
   `firstname` varchar(32) NOT NULL,
   `lastname` varchar(32) NOT NULL,
@@ -961,10 +960,10 @@ CREATE TABLE `pro_customer` (
   `fax` varchar(32) NOT NULL,
   `password` varchar(40) NOT NULL,
   `salt` varchar(9) NOT NULL,
-  `cart` text,
-  `wishlist` text,
-  `newsletter` tinyint(1) NOT NULL DEFAULT '0',
-  `address_id` int(11) NOT NULL DEFAULT '0',
+  `cart` text DEFAULT NULL,
+  `wishlist` text DEFAULT NULL,
+  `newsletter` tinyint(1) NOT NULL DEFAULT 0,
+  `address_id` int(11) NOT NULL DEFAULT 0,
   `custom_field` text NOT NULL,
   `ip` varchar(40) NOT NULL,
   `status` tinyint(1) NOT NULL,
@@ -1015,7 +1014,7 @@ CREATE TABLE `pro_customer_affiliate` (
   `company` varchar(40) NOT NULL,
   `website` varchar(255) NOT NULL,
   `tracking` varchar(64) NOT NULL,
-  `commission` decimal(4,2) NOT NULL DEFAULT '0.00',
+  `commission` decimal(4,2) NOT NULL DEFAULT 0.00,
   `tax` varchar(64) NOT NULL,
   `payment` varchar(6) NOT NULL,
   `cheque` varchar(100) NOT NULL,
@@ -1160,12 +1159,70 @@ CREATE TABLE `pro_customer_online` (
 
 CREATE TABLE `pro_customer_reward` (
   `customer_reward_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL DEFAULT '0',
-  `order_id` int(11) NOT NULL DEFAULT '0',
+  `customer_id` int(11) NOT NULL DEFAULT 0,
+  `order_id` int(11) NOT NULL DEFAULT 0,
   `description` text NOT NULL,
-  `points` int(8) NOT NULL DEFAULT '0',
+  `points` int(8) NOT NULL DEFAULT 0,
   `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pro_customer_rewards`
+--
+
+CREATE TABLE `pro_customer_rewards` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `reward_point` double(10,2) NOT NULL,
+  `reward_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pro_customer_rewards`
+--
+
+INSERT INTO `pro_customer_rewards` (`id`, `customer_id`, `reward_point`, `reward_date`) VALUES
+(1, 7, 250.00, '2021-01-12 05:37:36'),
+(2, 8, 300.00, '2021-01-12 05:40:37'),
+(3, 9, 300.00, '2021-01-12 11:13:28'),
+(4, 10, 300.00, '2021-01-13 04:14:23'),
+(5, 11, 300.00, '2021-01-13 09:11:41'),
+(6, 12, 300.00, '2021-01-13 09:11:41'),
+(7, 14, 300.00, '2021-01-13 09:32:50'),
+(8, 13, 300.00, '2021-01-13 09:32:50'),
+(9, 15, 300.00, '2021-01-13 09:50:40'),
+(10, 16, 300.00, '2021-01-13 09:50:40'),
+(11, 17, 300.00, '2021-01-13 10:20:38'),
+(12, 18, 300.00, '2021-01-13 10:20:38'),
+(13, 19, 300.00, '2021-01-14 04:40:29'),
+(14, 20, 300.00, '2021-01-14 04:40:29'),
+(15, 21, 300.00, '2021-01-14 04:58:11'),
+(16, 22, 300.00, '2021-01-14 04:58:11'),
+(17, 23, 300.00, '2021-01-14 06:24:49'),
+(18, 24, 300.00, '2021-01-14 06:24:49'),
+(19, 25, 300.00, '2021-01-14 06:36:19'),
+(20, 26, 300.00, '2021-01-14 06:36:19'),
+(21, 27, 300.00, '2021-01-14 06:44:29'),
+(22, 28, 300.00, '2021-01-14 06:44:29'),
+(23, 29, 300.00, '2021-01-14 06:48:02'),
+(24, 30, 300.00, '2021-01-14 06:48:02'),
+(25, 32, 300.00, '2021-01-14 06:55:20'),
+(26, 31, 300.00, '2021-01-14 06:55:20'),
+(27, 34, 300.00, '2021-01-14 11:32:30'),
+(28, 33, 300.00, '2021-01-14 11:32:30'),
+(29, 35, 300.00, '2021-01-14 12:09:46'),
+(30, 36, 300.00, '2021-01-14 12:09:46'),
+(31, 37, 300.00, '2021-01-16 05:11:13'),
+(32, 38, 300.00, '2021-01-16 12:31:30'),
+(33, 39, 300.00, '2021-01-16 12:31:30'),
+(34, 41, 300.00, '2021-01-17 04:21:23'),
+(35, 40, 300.00, '2021-01-17 04:21:23'),
+(36, 42, 300.00, '2021-01-17 05:44:15'),
+(37, 43, 300.00, '2021-01-17 05:44:15'),
+(38, 45, 300.00, '2021-01-17 09:00:54'),
+(39, 44, 300.00, '2021-01-17 09:00:54');
 
 -- --------------------------------------------------------
 
@@ -4999,7 +5056,7 @@ INSERT INTO `pro_geo_zone` (`geo_zone_id`, `name`, `description`, `date_added`, 
 
 CREATE TABLE `pro_googleshopping_category` (
   `google_product_category` varchar(10) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `category_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -5012,14 +5069,14 @@ CREATE TABLE `pro_googleshopping_category` (
 CREATE TABLE `pro_googleshopping_product` (
   `product_advertise_google_id` int(11) UNSIGNED NOT NULL,
   `product_id` int(11) DEFAULT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `has_issues` tinyint(1) DEFAULT NULL,
   `destination_status` enum('pending','approved','disapproved') NOT NULL DEFAULT 'pending',
-  `impressions` int(11) NOT NULL DEFAULT '0',
-  `clicks` int(11) NOT NULL DEFAULT '0',
-  `conversions` int(11) NOT NULL DEFAULT '0',
-  `cost` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `conversion_value` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `impressions` int(11) NOT NULL DEFAULT 0,
+  `clicks` int(11) NOT NULL DEFAULT 0,
+  `conversions` int(11) NOT NULL DEFAULT 0,
+  `cost` decimal(15,4) NOT NULL DEFAULT 0.0000,
+  `conversion_value` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `google_product_category` varchar(10) DEFAULT NULL,
   `condition` enum('new','refurbished','used') DEFAULT NULL,
   `adult` tinyint(1) DEFAULT NULL,
@@ -5031,7 +5088,7 @@ CREATE TABLE `pro_googleshopping_product` (
   `size_type` enum('regular','petite','plus','big and tall','maternity') DEFAULT NULL,
   `size_system` enum('AU','BR','CN','DE','EU','FR','IT','JP','MEX','UK','US') DEFAULT NULL,
   `size` int(11) DEFAULT NULL,
-  `is_modified` tinyint(1) NOT NULL DEFAULT '0'
+  `is_modified` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -5041,13 +5098,13 @@ CREATE TABLE `pro_googleshopping_product` (
 --
 
 CREATE TABLE `pro_googleshopping_product_status` (
-  `product_id` int(11) NOT NULL DEFAULT '0',
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `product_id` int(11) NOT NULL DEFAULT 0,
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `product_variation_id` varchar(64) NOT NULL DEFAULT '',
   `destination_statuses` text NOT NULL,
   `data_quality_issues` text NOT NULL,
   `item_level_issues` text NOT NULL,
-  `google_expiration_date` int(11) NOT NULL DEFAULT '0'
+  `google_expiration_date` int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -5058,7 +5115,7 @@ CREATE TABLE `pro_googleshopping_product_status` (
 
 CREATE TABLE `pro_googleshopping_product_target` (
   `product_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `advertise_google_target_id` int(11) UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -5070,14 +5127,14 @@ CREATE TABLE `pro_googleshopping_product_target` (
 
 CREATE TABLE `pro_googleshopping_target` (
   `advertise_google_target_id` int(11) UNSIGNED NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `campaign_name` varchar(255) NOT NULL DEFAULT '',
   `country` varchar(2) NOT NULL DEFAULT '',
-  `budget` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `budget` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `feeds` text NOT NULL,
   `status` enum('paused','active') NOT NULL DEFAULT 'paused',
   `date_added` date DEFAULT NULL,
-  `roas` int(11) NOT NULL DEFAULT '0'
+  `roas` int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -5088,9 +5145,9 @@ CREATE TABLE `pro_googleshopping_target` (
 
 CREATE TABLE `pro_information` (
   `information_id` int(11) NOT NULL,
-  `bottom` int(1) NOT NULL DEFAULT '0',
-  `sort_order` int(3) NOT NULL DEFAULT '0',
-  `status` tinyint(1) NOT NULL DEFAULT '1'
+  `bottom` int(1) NOT NULL DEFAULT 0,
+  `sort_order` int(3) NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -5175,7 +5232,7 @@ CREATE TABLE `pro_language` (
   `locale` varchar(255) NOT NULL,
   `image` varchar(64) NOT NULL,
   `directory` varchar(32) NOT NULL,
-  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `sort_order` int(3) NOT NULL DEFAULT 0,
   `status` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -5504,9 +5561,9 @@ CREATE TABLE `pro_length_class` (
 --
 
 INSERT INTO `pro_length_class` (`length_class_id`, `value`) VALUES
-(1, 1.00000000),
-(2, 10.00000000),
-(3, 0.39370000);
+(1, '1.00000000'),
+(2, '10.00000000'),
+(3, '0.39370000');
 
 -- --------------------------------------------------------
 
@@ -5607,7 +5664,7 @@ CREATE TABLE `pro_marketing` (
   `name` varchar(32) NOT NULL,
   `description` text NOT NULL,
   `code` varchar(64) NOT NULL,
-  `clicks` int(5) NOT NULL DEFAULT '0',
+  `clicks` int(5) NOT NULL DEFAULT 0,
   `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -5622,19 +5679,19 @@ CREATE TABLE `pro_mega_menu` (
   `parent_id` int(11) NOT NULL,
   `rang` int(11) NOT NULL,
   `icon` varchar(255) NOT NULL DEFAULT '',
-  `name` text,
+  `name` text DEFAULT NULL,
   `type_link` int(11) DEFAULT NULL,
   `module_id` int(11) DEFAULT NULL,
-  `link` text,
-  `description` text,
-  `new_window` int(11) NOT NULL DEFAULT '0',
-  `status` int(11) NOT NULL DEFAULT '0',
-  `position` int(11) NOT NULL DEFAULT '0',
-  `submenu_width` text,
-  `submenu_type` int(11) NOT NULL DEFAULT '0',
-  `content_width` int(11) NOT NULL DEFAULT '12',
-  `content_type` int(11) NOT NULL DEFAULT '0',
-  `content` text,
+  `link` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `new_window` int(11) NOT NULL DEFAULT 0,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `position` int(11) NOT NULL DEFAULT 0,
+  `submenu_width` text DEFAULT NULL,
+  `submenu_type` int(11) NOT NULL DEFAULT 0,
+  `content_width` int(11) NOT NULL DEFAULT 12,
+  `content_type` int(11) NOT NULL DEFAULT 0,
+  `content` text DEFAULT NULL,
   `label_item` varchar(255) NOT NULL DEFAULT '',
   `icon_font` varchar(255) NOT NULL DEFAULT '',
   `class_menu` varchar(255) DEFAULT NULL
@@ -6039,13 +6096,13 @@ INSERT INTO `pro_option_value_description` (`option_value_id`, `language_id`, `o
 
 CREATE TABLE `pro_order` (
   `order_id` int(11) NOT NULL,
-  `invoice_no` int(11) NOT NULL DEFAULT '0',
+  `invoice_no` int(11) NOT NULL DEFAULT 0,
   `invoice_prefix` varchar(26) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `store_name` varchar(64) NOT NULL,
   `store_url` varchar(255) NOT NULL,
-  `customer_id` int(11) NOT NULL DEFAULT '0',
-  `customer_group_id` int(11) NOT NULL DEFAULT '0',
+  `customer_id` int(11) NOT NULL DEFAULT 0,
+  `customer_group_id` int(11) NOT NULL DEFAULT 0,
   `firstname` varchar(32) NOT NULL,
   `lastname` varchar(32) NOT NULL,
   `email` varchar(96) NOT NULL,
@@ -6083,8 +6140,8 @@ CREATE TABLE `pro_order` (
   `shipping_method` varchar(128) NOT NULL,
   `shipping_code` varchar(128) NOT NULL,
   `comment` text NOT NULL,
-  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `order_status_id` int(11) NOT NULL DEFAULT '0',
+  `total` decimal(15,4) NOT NULL DEFAULT 0.0000,
+  `order_status_id` int(11) NOT NULL DEFAULT 0,
   `affiliate_id` int(11) NOT NULL,
   `commission` decimal(15,4) NOT NULL,
   `marketing_id` int(11) NOT NULL,
@@ -6092,7 +6149,7 @@ CREATE TABLE `pro_order` (
   `language_id` int(11) NOT NULL,
   `currency_id` int(11) NOT NULL,
   `currency_code` varchar(3) NOT NULL,
-  `currency_value` decimal(15,8) NOT NULL DEFAULT '1.00000000',
+  `currency_value` decimal(15,8) NOT NULL DEFAULT 1.00000000,
   `ip` varchar(40) NOT NULL,
   `forwarded_ip` varchar(40) NOT NULL,
   `user_agent` varchar(255) NOT NULL,
@@ -6106,7 +6163,8 @@ CREATE TABLE `pro_order` (
 --
 
 INSERT INTO `pro_order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `custom_field`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_custom_field`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_custom_field`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `marketing_id`, `tracking`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
-(1, 0, 'INV-2021-00', 0, 'Protidin', 'http://protidin.com.bd/', 0, 1, '', '', '', '', '', '\"\"', '', '', '', '', '', '', '', '', 18, '', 322, '', '[]', '', '', '', '', '', '', '', '', '', '', 18, '', 322, '', '[]', '', '', '', 284.9900, 0, 0, 0.0000, 0, '', 1, 2, 'USD', 1.00000000, '113.212.108.90', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'en-US,en;q=0.9', '2021-01-18 09:59:21', '2021-01-18 09:59:48');
+(1, 0, 'INV-2021-00', 0, 'Protidin', 'http://protidin.com.bd/', 0, 1, '', '', '', '', '', '\"\"', '', '', '', '', '', '', '', '', 18, '', 322, '', '[]', '', '', '', '', '', '', '', '', '', '', 18, '', 322, '', '[]', '', '', '', '284.9900', 0, 0, '0.0000', 0, '', 1, 2, 'USD', '1.00000000', '113.212.108.90', '', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36', 'en-US,en;q=0.9', '2021-01-18 09:59:21', '2021-01-18 09:59:48'),
+(2, 0, 'INV-2021-00', 0, 'Protidin', 'http://localhost/protidin/', 0, 1, '', '', '', '', '', '\"\"', '', '', '', '', '', '', '', '', 18, '', 322, '', '[]', '', '', '', '', '', '', '', '', '', '', 18, '', 322, '', '[]', '', '', '', '385.9900', 0, 0, '0.0000', 0, '', 1, 2, 'USD', '1.00000000', '127.0.0.1', '', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0', 'en-US,en;q=0.5', '2021-01-19 17:29:33', '2021-01-19 17:30:47');
 
 -- --------------------------------------------------------
 
@@ -6118,7 +6176,7 @@ CREATE TABLE `pro_order_history` (
   `order_history_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `order_status_id` int(11) NOT NULL,
-  `notify` tinyint(1) NOT NULL DEFAULT '0',
+  `notify` tinyint(1) NOT NULL DEFAULT 0,
   `comment` text NOT NULL,
   `date_added` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -6134,7 +6192,7 @@ CREATE TABLE `pro_order_option` (
   `order_id` int(11) NOT NULL,
   `order_product_id` int(11) NOT NULL,
   `product_option_id` int(11) NOT NULL,
-  `product_option_value_id` int(11) NOT NULL DEFAULT '0',
+  `product_option_value_id` int(11) NOT NULL DEFAULT 0,
   `name` varchar(255) NOT NULL,
   `value` text NOT NULL,
   `type` varchar(32) NOT NULL
@@ -6153,9 +6211,9 @@ CREATE TABLE `pro_order_product` (
   `name` varchar(255) NOT NULL,
   `model` varchar(64) NOT NULL,
   `quantity` int(4) NOT NULL,
-  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `total` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `price` decimal(15,4) NOT NULL DEFAULT 0.0000,
+  `total` decimal(15,4) NOT NULL DEFAULT 0.0000,
+  `tax` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `reward` int(8) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -6164,7 +6222,9 @@ CREATE TABLE `pro_order_product` (
 --
 
 INSERT INTO `pro_order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
-(84, 1, 29, 'Palm Treo Pro', 'Product 2', 1, 279.9900, 279.9900, 0.0000, 0);
+(84, 1, 29, 'Palm Treo Pro', 'Product 2', 1, '279.9900', '279.9900', '0.0000', 0),
+(7284, 2, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(7283, 2, 29, 'Palm Treo Pro', 'Product 2', 1, '279.9900', '279.9900', '0.0000', 0);
 
 -- --------------------------------------------------------
 
@@ -6267,7 +6327,7 @@ CREATE TABLE `pro_order_total` (
   `order_id` int(11) NOT NULL,
   `code` varchar(32) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `value` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `value` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `sort_order` int(3) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -6276,9 +6336,12 @@ CREATE TABLE `pro_order_total` (
 --
 
 INSERT INTO `pro_order_total` (`order_total_id`, `order_id`, `code`, `title`, `value`, `sort_order`) VALUES
-(246, 1, 'total', 'Total', 284.9900, 9),
-(245, 1, 'shipping', 'Flat Shipping Rate', 5.0000, 3),
-(244, 1, 'sub_total', 'Sub-Total', 279.9900, 1);
+(246, 1, 'total', 'Total', '284.9900', 9),
+(245, 1, 'shipping', 'Flat Shipping Rate', '5.0000', 3),
+(244, 1, 'sub_total', 'Sub-Total', '279.9900', 1),
+(11040, 2, 'total', 'Total', '385.9900', 9),
+(11039, 2, 'shipping', 'Flat Shipping Rate', '5.0000', 3),
+(11038, 2, 'sub_total', 'Sub-Total', '380.9900', 1);
 
 -- --------------------------------------------------------
 
@@ -6317,26 +6380,26 @@ CREATE TABLE `pro_product` (
   `isbn` varchar(17) NOT NULL,
   `mpn` varchar(64) NOT NULL,
   `location` varchar(128) NOT NULL,
-  `quantity` int(4) NOT NULL DEFAULT '0',
+  `quantity` int(4) NOT NULL DEFAULT 0,
   `stock_status_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `manufacturer_id` int(11) NOT NULL,
-  `shipping` tinyint(1) NOT NULL DEFAULT '1',
-  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `points` int(8) NOT NULL DEFAULT '0',
+  `shipping` tinyint(1) NOT NULL DEFAULT 1,
+  `price` decimal(15,4) NOT NULL DEFAULT 0.0000,
+  `points` int(8) NOT NULL DEFAULT 0,
   `tax_class_id` int(11) NOT NULL,
   `date_available` date NOT NULL DEFAULT '0000-00-00',
-  `weight` decimal(15,8) NOT NULL DEFAULT '0.00000000',
-  `weight_class_id` int(11) NOT NULL DEFAULT '0',
-  `length` decimal(15,8) NOT NULL DEFAULT '0.00000000',
-  `width` decimal(15,8) NOT NULL DEFAULT '0.00000000',
-  `height` decimal(15,8) NOT NULL DEFAULT '0.00000000',
-  `length_class_id` int(11) NOT NULL DEFAULT '0',
-  `subtract` tinyint(1) NOT NULL DEFAULT '1',
-  `minimum` int(11) NOT NULL DEFAULT '1',
-  `sort_order` int(11) NOT NULL DEFAULT '0',
-  `status` tinyint(1) NOT NULL DEFAULT '0',
-  `viewed` int(5) NOT NULL DEFAULT '0',
+  `weight` decimal(15,8) NOT NULL DEFAULT 0.00000000,
+  `weight_class_id` int(11) NOT NULL DEFAULT 0,
+  `length` decimal(15,8) NOT NULL DEFAULT 0.00000000,
+  `width` decimal(15,8) NOT NULL DEFAULT 0.00000000,
+  `height` decimal(15,8) NOT NULL DEFAULT 0.00000000,
+  `length_class_id` int(11) NOT NULL DEFAULT 0,
+  `subtract` tinyint(1) NOT NULL DEFAULT 1,
+  `minimum` int(11) NOT NULL DEFAULT 1,
+  `sort_order` int(11) NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `viewed` int(5) NOT NULL DEFAULT 0,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -6346,25 +6409,25 @@ CREATE TABLE `pro_product` (
 --
 
 INSERT INTO `pro_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 14, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
-(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, 13, '2009-02-03 16:42:17', '2011-09-30 01:06:08'),
-(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 12, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
-(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, 7, '2009-02-03 17:00:10', '2011-09-30 01:06:00'),
-(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 8, '2009-02-03 17:07:26', '2011-09-30 01:07:22'),
-(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 9, '2009-02-03 17:08:31', '2011-09-30 01:06:29'),
-(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 8, '2009-02-03 18:07:54', '2011-09-30 01:07:17'),
-(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 6, '2009-02-03 18:08:31', '2011-09-30 01:06:17'),
-(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 8, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
-(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 14, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, 10, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
-(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, 12, '2009-02-03 21:07:37', '2011-09-30 00:46:19'),
-(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 11, '2009-02-03 21:07:49', '2011-09-30 01:05:46'),
-(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 11, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
-(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 8, '2009-02-03 21:08:17', '2011-09-15 22:22:01'),
-(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 14, '2009-02-03 21:08:29', '2011-09-30 01:06:39'),
-(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, 11, '2009-02-03 21:08:40', '2011-09-30 01:05:28'),
-(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, 11, '2009-02-08 17:21:51', '2011-09-30 01:07:06'),
-(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'catalog/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 7, '2011-04-26 08:57:34', '2011-09-30 01:06:23');
+(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'catalog/demo/htc_touch_hd_1.jpg', 5, 1, '100.0000', 200, 9, '2009-02-03', '146.40000000', 2, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 14, '2009-02-03 16:06:50', '2011-09-30 01:05:39'),
+(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/palm_treo_pro_1.jpg', 6, 1, '279.9900', 0, 9, '2009-02-03', '133.00000000', 2, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 13, '2009-02-03 16:42:17', '2011-09-30 01:06:08'),
+(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'catalog/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 12, '2009-02-03 16:59:00', '2011-09-30 01:05:23'),
+(31, 'Product 4', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, 7, '2009-02-03 17:00:10', '2011-09-30 01:06:00'),
+(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'catalog/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 8, '2009-02-03 17:07:26', '2011-09-30 01:07:22'),
+(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 9, '2009-02-03 17:08:31', '2011-09-30 01:06:29'),
+(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'catalog/demo/ipod_shuffle_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 8, '2009-02-03 18:07:54', '2011-09-30 01:07:17'),
+(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 6, '2009-02-03 18:08:31', '2011-09-30 01:06:17'),
+(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'catalog/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 8, '2009-02-03 18:09:19', '2011-09-30 01:07:12'),
+(40, 'product 11', '', '', '', '', '', '', '', 970, 5, 'catalog/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 14, '2009-02-03 21:07:12', '2011-09-30 01:06:53'),
+(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'catalog/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, 10, '2009-02-03 21:07:26', '2011-09-30 01:06:44'),
+(42, 'Product 15', '', '', '', '', '', '', '', 990, 5, 'catalog/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '2.00000000', '3.00000000', 1, 1, 2, 0, 1, 12, '2009-02-03 21:07:37', '2011-09-30 00:46:19'),
+(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'catalog/demo/macbook_1.jpg', 8, 0, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 11, '2009-02-03 21:07:49', '2011-09-30 01:05:46'),
+(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 11, '2009-02-03 21:08:00', '2011-09-30 01:05:53'),
+(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'catalog/demo/macbook_pro_1.jpg', 8, 1, '2000.0000', 0, 100, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 8, '2009-02-03 21:08:17', '2011-09-15 22:22:01'),
+(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/sony_vaio_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 14, '2009-02-03 21:08:29', '2011-09-30 01:06:39'),
+(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'catalog/demo/hp_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, 11, '2009-02-03 21:08:40', '2011-09-30 01:05:28'),
+(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'catalog/demo/ipod_classic_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, 11, '2009-02-08 17:21:51', '2011-09-30 01:07:06'),
+(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'catalog/demo/samsung_tab_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 7, '2011-04-26 08:57:34', '2011-09-30 01:06:23');
 
 -- --------------------------------------------------------
 
@@ -6442,9 +6505,9 @@ CREATE TABLE `pro_product_discount` (
   `product_discount_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
-  `quantity` int(4) NOT NULL DEFAULT '0',
-  `priority` int(5) NOT NULL DEFAULT '1',
-  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `quantity` int(4) NOT NULL DEFAULT 0,
+  `priority` int(5) NOT NULL DEFAULT 1,
+  `price` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `date_start` date NOT NULL DEFAULT '0000-00-00',
   `date_end` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -6454,9 +6517,9 @@ CREATE TABLE `pro_product_discount` (
 --
 
 INSERT INTO `pro_product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(440, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
-(439, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
-(438, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
+(440, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
+(439, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
+(438, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -6479,7 +6542,7 @@ CREATE TABLE `pro_product_image` (
   `product_image_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `sort_order` int(3) NOT NULL DEFAULT '0'
+  `sort_order` int(3) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -6608,22 +6671,22 @@ CREATE TABLE `pro_product_option_value` (
 --
 
 INSERT INTO `pro_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(1, 217, 42, 5, 41, 100, 0, 1.0000, '+', 0, '+', 1.00000000, '+'),
-(6, 218, 42, 1, 31, 146, 1, 20.0000, '+', 2, '-', 20.00000000, '+'),
-(7, 218, 42, 1, 43, 300, 1, 30.0000, '+', 3, '+', 30.00000000, '+'),
-(5, 218, 42, 1, 32, 96, 1, 10.0000, '+', 1, '+', 10.00000000, '+'),
-(4, 217, 42, 5, 39, 92, 1, 4.0000, '+', 0, '+', 4.00000000, '+'),
-(2, 217, 42, 5, 42, 200, 1, 2.0000, '+', 0, '+', 2.00000000, '+'),
-(3, 217, 42, 5, 40, 300, 0, 3.0000, '+', 0, '+', 3.00000000, '+'),
-(8, 223, 42, 2, 23, 48, 1, 10.0000, '+', 0, '+', 10.00000000, '+'),
-(10, 223, 42, 2, 44, 2696, 1, 30.0000, '+', 0, '+', 30.00000000, '+'),
-(9, 223, 42, 2, 24, 194, 1, 20.0000, '+', 0, '+', 20.00000000, '+'),
-(11, 223, 42, 2, 45, 3998, 1, 40.0000, '+', 0, '+', 40.00000000, '+'),
-(12, 224, 35, 11, 46, 0, 1, 5.0000, '+', 0, '+', 0.00000000, '+'),
-(13, 224, 35, 11, 47, 10, 1, 10.0000, '+', 0, '+', 0.00000000, '+'),
-(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+'),
-(16, 226, 30, 5, 40, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-(15, 226, 30, 5, 39, 2, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
+(1, 217, 42, 5, 41, 100, 0, '1.0000', '+', 0, '+', '1.00000000', '+'),
+(6, 218, 42, 1, 31, 146, 1, '20.0000', '+', 2, '-', '20.00000000', '+'),
+(7, 218, 42, 1, 43, 300, 1, '30.0000', '+', 3, '+', '30.00000000', '+'),
+(5, 218, 42, 1, 32, 96, 1, '10.0000', '+', 1, '+', '10.00000000', '+'),
+(4, 217, 42, 5, 39, 92, 1, '4.0000', '+', 0, '+', '4.00000000', '+'),
+(2, 217, 42, 5, 42, 200, 1, '2.0000', '+', 0, '+', '2.00000000', '+'),
+(3, 217, 42, 5, 40, 300, 0, '3.0000', '+', 0, '+', '3.00000000', '+'),
+(8, 223, 42, 2, 23, 48, 1, '10.0000', '+', 0, '+', '10.00000000', '+'),
+(10, 223, 42, 2, 44, 2696, 1, '30.0000', '+', 0, '+', '30.00000000', '+'),
+(9, 223, 42, 2, 24, 194, 1, '20.0000', '+', 0, '+', '20.00000000', '+'),
+(11, 223, 42, 2, 45, 3998, 1, '40.0000', '+', 0, '+', '40.00000000', '+'),
+(12, 224, 35, 11, 46, 0, 1, '5.0000', '+', 0, '+', '0.00000000', '+'),
+(13, 224, 35, 11, 47, 10, 1, '10.0000', '+', 0, '+', '0.00000000', '+'),
+(14, 224, 35, 11, 48, 15, 1, '15.0000', '+', 0, '+', '0.00000000', '+'),
+(16, 226, 30, 5, 40, 5, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(15, 226, 30, 5, 39, 2, 1, '0.0000', '+', 0, '+', '0.00000000', '+');
 
 -- --------------------------------------------------------
 
@@ -6666,9 +6729,9 @@ INSERT INTO `pro_product_related` (`product_id`, `related_id`) VALUES
 
 CREATE TABLE `pro_product_reward` (
   `product_reward_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL DEFAULT '0',
-  `customer_group_id` int(11) NOT NULL DEFAULT '0',
-  `points` int(8) NOT NULL DEFAULT '0'
+  `product_id` int(11) NOT NULL DEFAULT 0,
+  `customer_group_id` int(11) NOT NULL DEFAULT 0,
+  `points` int(8) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -6706,8 +6769,8 @@ CREATE TABLE `pro_product_special` (
   `product_special_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
-  `priority` int(5) NOT NULL DEFAULT '1',
-  `price` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `priority` int(5) NOT NULL DEFAULT 1,
+  `price` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `date_start` date NOT NULL DEFAULT '0000-00-00',
   `date_end` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -6717,9 +6780,9 @@ CREATE TABLE `pro_product_special` (
 --
 
 INSERT INTO `pro_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(419, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
-(439, 30, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
-(438, 30, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
+(419, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
+(439, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00'),
+(438, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -6799,7 +6862,7 @@ CREATE TABLE `pro_product_to_layout` (
 
 CREATE TABLE `pro_product_to_store` (
   `product_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0'
+  `store_id` int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -6882,7 +6945,7 @@ CREATE TABLE `pro_return` (
   `return_reason_id` int(11) NOT NULL,
   `return_action_id` int(11) NOT NULL,
   `return_status_id` int(11) NOT NULL,
-  `comment` text,
+  `comment` text DEFAULT NULL,
   `date_ordered` date NOT NULL DEFAULT '0000-00-00',
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
@@ -6896,7 +6959,7 @@ CREATE TABLE `pro_return` (
 
 CREATE TABLE `pro_return_action` (
   `return_action_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL DEFAULT '0',
+  `language_id` int(11) NOT NULL DEFAULT 0,
   `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -6932,7 +6995,7 @@ CREATE TABLE `pro_return_history` (
 
 CREATE TABLE `pro_return_reason` (
   `return_reason_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL DEFAULT '0',
+  `language_id` int(11) NOT NULL DEFAULT 0,
   `name` varchar(128) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -6955,7 +7018,7 @@ INSERT INTO `pro_return_reason` (`return_reason_id`, `language_id`, `name`) VALU
 
 CREATE TABLE `pro_return_status` (
   `return_status_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL DEFAULT '0',
+  `language_id` int(11) NOT NULL DEFAULT 0,
   `name` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -6981,10 +7044,58 @@ CREATE TABLE `pro_review` (
   `author` varchar(64) NOT NULL,
   `text` text NOT NULL,
   `rating` int(1) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT 0,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pro_rewards_setting`
+--
+
+CREATE TABLE `pro_rewards_setting` (
+  `id` int(11) NOT NULL,
+  `reward_point` double(10,2) NOT NULL,
+  `is_percentage` int(1) NOT NULL DEFAULT 0,
+  `is_fixed` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pro_rewards_setting`
+--
+
+INSERT INTO `pro_rewards_setting` (`id`, `reward_point`, `is_percentage`, `is_fixed`) VALUES
+(1, 250.00, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pro_reward_rate_setting`
+--
+
+CREATE TABLE `pro_reward_rate_setting` (
+  `id` int(11) NOT NULL,
+  `min_amount` double(10,2) NOT NULL,
+  `max_amount` double(10,2) NOT NULL,
+  `percentage_value` double(10,2) NOT NULL,
+  `fixed_value` double(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `pro_reward_rate_setting`
+--
+
+INSERT INTO `pro_reward_rate_setting` (`id`, `min_amount`, `max_amount`, `percentage_value`, `fixed_value`) VALUES
+(1, 50.00, 200.00, 1.50, 5.00),
+(2, 201.00, 500.00, 3.00, 25.00),
+(3, 400.00, 600.00, 2.00, 5.00),
+(4, 0.00, 0.00, 0.00, 0.00),
+(5, 0.00, 0.00, 0.00, 0.00),
+(6, 0.00, 0.00, 0.00, 0.00),
+(7, 0.00, 0.00, 0.00, 0.00),
+(8, 300.00, 800.00, 3.00, 0.00);
 
 -- --------------------------------------------------------
 
@@ -7572,6 +7683,7 @@ INSERT INTO `pro_session` (`session_id`, `data`, `expire`) VALUES
 ('d14e873e6978e219de5063b2e8', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"device\":\"desktop\"}', '2021-01-13 08:51:28'),
 ('d1a35814f3c6df3292fa5f1635', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"device\":\"desktop\"}', '2021-01-17 03:07:23'),
 ('d1d4bb1fb3d78c06375faf0c6e', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"device\":\"desktop\",\"sorecentproduct\":[\"30\"]}', '2021-01-13 08:54:27'),
+('d1fddfc186232e5dff023f8c33', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"device\":\"desktop\",\"order_id\":\"2\",\"comment\":null,\"payment_address\":{\"firstname\":null,\"lastname\":null,\"company\":null,\"address_id\":null,\"address_1\":null,\"address_2\":null,\"city\":null,\"postcode\":\"fdsfsdf\",\"country_id\":\"18\",\"zone_id\":null,\"custom_field\":[],\"country_name\":\"Bangladesh\",\"country\":\"Bangladesh\",\"iso_code_2\":\"BD\",\"iso_code_3\":\"BGD\",\"address_format\":\"\",\"zone\":\"\",\"zone_name\":\"\",\"zone_code\":\"\"},\"payment_country_id\":\"18\",\"payment_zone_id\":null,\"shipping_address\":{\"firstname\":null,\"lastname\":null,\"company\":null,\"address_id\":null,\"address_1\":null,\"address_2\":null,\"city\":null,\"postcode\":\"fdsfsdf\",\"country_id\":\"18\",\"zone_id\":null,\"custom_field\":[],\"country_name\":\"Bangladesh\",\"country\":\"Bangladesh\",\"iso_code_2\":\"BD\",\"iso_code_3\":\"BGD\",\"address_format\":\"\",\"zone\":\"\",\"zone_name\":\"\",\"zone_code\":\"\"},\"shipping_country_id\":\"18\",\"shipping_zone_id\":null,\"shipping_methods\":{\"flat\":{\"title\":\"Flat Rate\",\"quote\":{\"flat\":{\"code\":\"flat.flat\",\"title\":\"Flat Shipping Rate\",\"cost\":\"5.00\",\"tax_class_id\":\"9\",\"text\":\"$5.00\"}},\"sort_order\":\"1\",\"error\":false}},\"shipping_method\":{\"code\":\"flat.flat\",\"title\":\"Flat Shipping Rate\",\"cost\":\"5.00\",\"tax_class_id\":\"9\",\"text\":\"$5.00\"},\"payment_methods\":{\"cod\":{\"code\":\"cod\",\"title\":\"Cash On Delivery\",\"terms\":\"\",\"sort_order\":\"5\"}},\"payment_method\":{\"code\":\"cod\",\"title\":\"Cash On Delivery\",\"terms\":\"\",\"sort_order\":\"5\"},\"user_id\":\"1\",\"user_token\":\"YcddYJGvtuEETUbDcvrRyPKaxJA3CFK1\"}', '2021-01-19 13:46:06'),
 ('d2845ef7e7cfc744da6e3a3728', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"device\":\"desktop\"}', '2021-01-16 12:17:46'),
 ('d34b1940265e21da7fa9cf00cd', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"device\":\"desktop\"}', '2021-01-17 00:33:37'),
 ('d413ec8618052791078a58bbee', '{\"language\":\"en-gb\",\"currency\":\"USD\",\"device\":\"desktop\"}', '2021-01-13 05:07:37'),
@@ -7665,7 +7777,7 @@ INSERT INTO `pro_session` (`session_id`, `data`, `expire`) VALUES
 
 CREATE TABLE `pro_setting` (
   `setting_id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `code` varchar(128) NOT NULL,
   `key` varchar(128) NOT NULL,
   `value` text NOT NULL,
@@ -7677,50 +7789,33 @@ CREATE TABLE `pro_setting` (
 --
 
 INSERT INTO `pro_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
-(17953, 0, 'config', 'config_error_filename', 'error.log', 0),
-(17952, 0, 'config', 'config_error_log', '1', 0),
-(17951, 0, 'config', 'config_error_display', '1', 0),
-(17950, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(17949, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(17948, 0, 'config', 'config_file_max_size', '300000', 0),
-(17943, 0, 'config', 'config_compression', '0', 0),
-(17944, 0, 'config', 'config_secure', '1', 0),
-(17945, 0, 'config', 'config_password', '1', 0),
-(17946, 0, 'config', 'config_shared', '0', 0),
-(17947, 0, 'config', 'config_encryption', 'wraNGfYw83JCIGIZB5mCx0IfwZHgnuhjP1I5p66k39AeKZIjEuOdgHu6MH3leeJzGsWTK5CdyZvEbW5ezJoDtH11hEtQ36h0U8bHptEk3dZcRXHBsDf6KO4cvLfcjJRkOl6fhU6rYBtqvwJTHbXl51nhJtxIe31JGjEhWXPd9h7ePZYq4v49WXZ2uNLHTh41W6V1cQKAp6rWnvPe3kVsVNkzvMxZj7CKuVaJE85nQSdlE0zO4CqlZx1VpPS0NSr3T1yb2pj7ILquoah0pQlX6AqsEcFB60QzrUDHj4JUQW0Z3gUla23sgeektody0ltAxj36qWzUEpqIdfwcuA55YlKwBWiP76zEXTVWqe376cWhvKWfmdc78jeLolCSU4abyY23q6BRM3kxJN9i7zz42gs2OkveTF6limGc2WbGlUw0shYNOByi5AkulzXy0OWR3hsIReemlZqBQozb6Rn9RqJ4BJQxNUpDIAmqk4AUHirLSHnxn8DszZLP4eh5NhvjpQDddCEzhgLHSA37oNT6yYJMuVDrW8wWqcgjVKkzsjIvfKWFjSntb6jmGafOFemutgjywYvSJrxyvbCNLbiLkF5K9olj3vyQV6uaGcWezTQC61fhLcwML6rRDaOlIH1iL82QpnLnPS1tKNWZz1D4hZoWkIR3rvHv7BV4MYVv2vliff0hb6ABXfHX7DmfTif9Xipl1f57wEXJwe4plFPq0liJy1SQJvXBoKyzgECG9S7tcHtpjv56gUvYbSXPGo0sgoBxzEVY2owcB4T9cxaC7ppI6fDndcTFv9rVuP0v67CxBIefmWcB5CdGcIWGgwfHMucxpoa31IIZ3F2Cseum32i0TpaGduPQ2RTC3DreM4ckoeLhnajj2AP3FRXcDRbJ3nafOSdZsTQNLhaNRluqhW30KkUfOxmWiIGhvxXYUmXpUgwaAPQiJhVYjMgBSaPto8YRzaF8ohkuB7rXHaC9zs1FeRRtfIUQvWYBh4cO8E0zAvkkaqROEt88oT7w7Oll', 0),
+(18736, 0, 'config', 'config_reward_point', '', 0),
+(18735, 0, 'config', 'config_error_filename', 'error.log', 0),
+(18734, 0, 'config', 'config_error_log', '1', 0),
+(18733, 0, 'config', 'config_error_display', '1', 0),
+(18730, 0, 'config', 'config_file_max_size', '300000', 0),
+(18731, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(18732, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(18725, 0, 'config', 'config_compression', '0', 0),
+(18726, 0, 'config', 'config_secure', '1', 0),
+(18727, 0, 'config', 'config_password', '1', 0),
+(18728, 0, 'config', 'config_shared', '0', 0),
+(18729, 0, 'config', 'config_encryption', 'wraNGfYw83JCIGIZB5mCx0IfwZHgnuhjP1I5p66k39AeKZIjEuOdgHu6MH3leeJzGsWTK5CdyZvEbW5ezJoDtH11hEtQ36h0U8bHptEk3dZcRXHBsDf6KO4cvLfcjJRkOl6fhU6rYBtqvwJTHbXl51nhJtxIe31JGjEhWXPd9h7ePZYq4v49WXZ2uNLHTh41W6V1cQKAp6rWnvPe3kVsVNkzvMxZj7CKuVaJE85nQSdlE0zO4CqlZx1VpPS0NSr3T1yb2pj7ILquoah0pQlX6AqsEcFB60QzrUDHj4JUQW0Z3gUla23sgeektody0ltAxj36qWzUEpqIdfwcuA55YlKwBWiP76zEXTVWqe376cWhvKWfmdc78jeLolCSU4abyY23q6BRM3kxJN9i7zz42gs2OkveTF6limGc2WbGlUw0shYNOByi5AkulzXy0OWR3hsIReemlZqBQozb6Rn9RqJ4BJQxNUpDIAmqk4AUHirLSHnxn8DszZLP4eh5NhvjpQDddCEzhgLHSA37oNT6yYJMuVDrW8wWqcgjVKkzsjIvfKWFjSntb6jmGafOFemutgjywYvSJrxyvbCNLbiLkF5K9olj3vyQV6uaGcWezTQC61fhLcwML6rRDaOlIH1iL82QpnLnPS1tKNWZz1D4hZoWkIR3rvHv7BV4MYVv2vliff0hb6ABXfHX7DmfTif9Xipl1f57wEXJwe4plFPq0liJy1SQJvXBoKyzgECG9S7tcHtpjv56gUvYbSXPGo0sgoBxzEVY2owcB4T9cxaC7ppI6fDndcTFv9rVuP0v67CxBIefmWcB5CdGcIWGgwfHMucxpoa31IIZ3F2Cseum32i0TpaGduPQ2RTC3DreM4ckoeLhnajj2AP3FRXcDRbJ3nafOSdZsTQNLhaNRluqhW30KkUfOxmWiIGhvxXYUmXpUgwaAPQiJhVYjMgBSaPto8YRzaF8ohkuB7rXHaC9zs1FeRRtfIUQvWYBh4cO8E0zAvkkaqROEt88oT7w7Oll', 0),
 (4, 0, 'voucher', 'total_voucher_sort_order', '8', 0),
 (5, 0, 'voucher', 'total_voucher_status', '1', 0),
-(17920, 0, 'config', 'config_affiliate_group_id', '1', 0),
-(17921, 0, 'config', 'config_affiliate_approval', '0', 0),
-(17922, 0, 'config', 'config_affiliate_auto', '0', 0),
-(17923, 0, 'config', 'config_affiliate_commission', '5', 0),
-(17924, 0, 'config', 'config_affiliate_id', '4', 0),
-(17925, 0, 'config', 'config_return_id', '0', 0),
-(17926, 0, 'config', 'config_return_status_id', '2', 0),
-(17927, 0, 'config', 'config_captcha', '', 0),
-(17928, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
-(17929, 0, 'config', 'config_logo', 'catalog/protidin_logo.png', 0),
-(17930, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
-(17931, 0, 'config', 'config_mail_engine', 'mail', 0),
-(17932, 0, 'config', 'config_mail_parameter', '', 0),
-(17933, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(17934, 0, 'config', 'config_mail_smtp_username', '', 0),
-(17935, 0, 'config', 'config_mail_smtp_password', '', 0),
-(17936, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(17937, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(17938, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
-(17939, 0, 'config', 'config_mail_alert_email', '', 0),
-(17940, 0, 'config', 'config_maintenance', '0', 0),
-(17941, 0, 'config', 'config_seo_url', '0', 0),
-(17942, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(17919, 0, 'config', 'config_stock_checkout', '0', 0),
-(17918, 0, 'config', 'config_stock_warning', '0', 0),
-(17912, 0, 'config', 'config_order_status_id', '1', 0),
-(17913, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
-(17914, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
-(17915, 0, 'config', 'config_fraud_status_id', '7', 0),
-(17916, 0, 'config', 'config_api_id', '1', 0),
-(17917, 0, 'config', 'config_stock_display', '0', 0),
+(18712, 0, 'config', 'config_icon', 'catalog/cart.png', 0),
+(18713, 0, 'config', 'config_mail_engine', 'mail', 0),
+(18714, 0, 'config', 'config_mail_parameter', '', 0),
+(18715, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(18716, 0, 'config', 'config_mail_smtp_username', '', 0),
+(18717, 0, 'config', 'config_mail_smtp_password', '', 0),
+(18718, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(18719, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(18720, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
+(18721, 0, 'config', 'config_mail_alert_email', '', 0),
+(18722, 0, 'config', 'config_maintenance', '0', 0),
+(18723, 0, 'config', 'config_seo_url', '0', 0),
+(18724, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
 (95, 0, 'payment_free_checkout', 'payment_free_checkout_status', '1', 0),
 (96, 0, 'payment_free_checkout', 'free_checkout_order_status_id', '1', 0),
 (97, 0, 'payment_free_checkout', 'payment_free_checkout_sort_order', '1', 0),
@@ -7814,50 +7909,36 @@ INSERT INTO `pro_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `se
 (198, 0, 'report_marketing', 'report_marketing_sort_order', '12', 0),
 (199, 0, 'developer', 'developer_theme', '1', 0),
 (200, 0, 'developer', 'developer_sass', '1', 0),
-(17911, 0, 'config', 'config_checkout_id', '5', 0),
-(17910, 0, 'config', 'config_checkout_guest', '1', 0),
-(17909, 0, 'config', 'config_cart_weight', '1', 0),
-(17908, 0, 'config', 'config_invoice_prefix', 'INV-2021-00', 0),
-(17907, 0, 'config', 'config_account_id', '3', 0),
-(17906, 0, 'config', 'config_login_attempts', '5', 0),
-(17905, 0, 'config', 'config_customer_price', '0', 0),
-(17904, 0, 'config', 'config_customer_group_display', '[\"1\"]', 1),
-(17903, 0, 'config', 'config_customer_group_id', '1', 0),
-(17902, 0, 'config', 'config_customer_search', '0', 0),
-(17901, 0, 'config', 'config_customer_activity', '0', 0),
-(17900, 0, 'config', 'config_customer_online', '0', 0),
-(17899, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(17898, 0, 'config', 'config_tax_default', 'shipping', 0),
-(17897, 0, 'config', 'config_tax', '1', 0),
-(17896, 0, 'config', 'config_voucher_max', '1000', 0),
-(17895, 0, 'config', 'config_voucher_min', '1', 0),
-(17894, 0, 'config', 'config_review_guest', '1', 0),
-(17893, 0, 'config', 'config_review_status', '1', 0),
-(17892, 0, 'config', 'config_limit_admin', '20', 0),
-(17891, 0, 'config', 'config_product_count', '1', 0),
-(17890, 0, 'config', 'config_weight_class_id', '1', 0),
-(17889, 0, 'config', 'config_length_class_id', '1', 0),
-(17888, 0, 'config', 'config_currency_auto', '1', 0),
-(17887, 0, 'config', 'config_currency', 'USD', 0),
-(17886, 0, 'config', 'config_admin_language', 'en-gb', 0),
-(17880, 0, 'config', 'config_image', 'catalog/protidin_logo.png', 0),
-(17885, 0, 'config', 'config_language', 'en-gb', 0),
-(17884, 0, 'config', 'config_zone_id', '322', 0),
-(17883, 0, 'config', 'config_country_id', '18', 0),
-(17882, 0, 'config', 'config_comment', '', 0),
-(17881, 0, 'config', 'config_open', '', 0),
-(17879, 0, 'config', 'config_fax', '', 0),
-(17877, 0, 'config', 'config_email', 'firoz.sysable@gmail.com', 0),
-(17878, 0, 'config', 'config_telephone', '123456789', 0),
-(17876, 0, 'config', 'config_geocode', '', 0),
-(17875, 0, 'config', 'config_address', 'Address 1', 0),
-(17874, 0, 'config', 'config_owner', 'Protidin', 0),
-(17873, 0, 'config', 'config_name', 'Protidin', 0),
-(17872, 0, 'config', 'config_layout_id', '4', 0),
-(17871, 0, 'config', 'config_theme', 'default', 0),
-(17870, 0, 'config', 'config_meta_keyword', '', 0),
-(17869, 0, 'config', 'config_meta_description', 'Protidin', 0),
-(17868, 0, 'config', 'config_meta_title', 'Protidin', 0),
+(18709, 0, 'config', 'config_captcha', '', 0),
+(18710, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
+(18711, 0, 'config', 'config_logo', 'catalog/protidin_logo.png', 0),
+(18708, 0, 'config', 'config_return_status_id', '2', 0),
+(18707, 0, 'config', 'config_return_id', '0', 0),
+(18706, 0, 'config', 'config_affiliate_id', '4', 0),
+(18705, 0, 'config', 'config_affiliate_commission', '5', 0),
+(18704, 0, 'config', 'config_affiliate_auto', '0', 0),
+(18703, 0, 'config', 'config_affiliate_approval', '0', 0),
+(18702, 0, 'config', 'config_affiliate_group_id', '1', 0),
+(18701, 0, 'config', 'config_stock_checkout', '0', 0),
+(18700, 0, 'config', 'config_stock_warning', '0', 0),
+(18699, 0, 'config', 'config_stock_display', '0', 0),
+(18698, 0, 'config', 'config_api_id', '1', 0),
+(18694, 0, 'config', 'config_order_status_id', '1', 0),
+(18695, 0, 'config', 'config_processing_status', '[\"5\",\"1\",\"2\",\"12\",\"3\"]', 1),
+(18697, 0, 'config', 'config_fraud_status_id', '7', 0),
+(18696, 0, 'config', 'config_complete_status', '[\"5\",\"3\"]', 1),
+(18693, 0, 'config', 'config_checkout_id', '5', 0),
+(18692, 0, 'config', 'config_checkout_guest', '1', 0),
+(18691, 0, 'config', 'config_cart_weight', '1', 0),
+(18690, 0, 'config', 'config_invoice_prefix', 'INV-2021-00', 0),
+(18689, 0, 'config', 'config_account_id', '3', 0),
+(18688, 0, 'config', 'config_login_attempts', '5', 0),
+(18685, 0, 'config', 'config_customer_group_id', '1', 0),
+(18686, 0, 'config', 'config_customer_group_display', '[\"1\"]', 1),
+(18687, 0, 'config', 'config_customer_price', '0', 0),
+(18684, 0, 'config', 'config_customer_search', '0', 0),
+(18683, 0, 'config', 'config_customer_activity', '0', 0),
+(18682, 0, 'config', 'config_customer_online', '0', 0),
 (2567, 0, 'so_onepagecheckout', 'so_onepagecheckout_layout_setting', '{\"so_onepagecheckout_register_checkout\":\"1\",\"so_onepagecheckout_guest_checkout\":\"1\",\"so_onepagecheckout_enable_login\":\"1\",\"so_onepagecheckout_account_open\":\"register\",\"shopping_cart_status\":\"1\",\"show_product_weight\":\"1\",\"show_product_qnty_update\":\"1\",\"show_product_removecart\":\"1\",\"show_product_image_width\":\"80\",\"show_product_image_height\":\"80\",\"coupon_login_status\":\"1\",\"coupon_register_status\":\"1\",\"coupon_guest_status\":\"1\",\"reward_login_status\":\"1\",\"reward_register_status\":\"1\",\"reward_guest_status\":\"1\",\"voucher_login_status\":\"1\",\"voucher_register_status\":\"1\",\"voucher_guest_status\":\"1\",\"delivery_method_status\":\"1\",\"so_onepagecheckout_default_shipping\":\"flat\",\"flat_status\":\"1\",\"payment_method_status\":\"1\",\"so_onepagecheckout_default_payment\":\"cod\",\"cod_status\":\"1\",\"comment_status\":\"1\",\"require_comment_status\":\"1\",\"show_newsletter\":\"1\",\"show_privacy\":\"1\",\"show_term\":\"1\"}', 1),
 (9600, 0, 'so_sociallogin', 'so_sociallogin_width', '130', 0),
 (9599, 0, 'so_sociallogin', 'so_sociallogin_name', 'So Social Login', 0),
@@ -7998,7 +8079,39 @@ INSERT INTO `pro_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `se
 (17675, 0, 'theme_default', 'theme_default_product_description_length', '150', 0),
 (17674, 0, 'theme_default', 'theme_default_product_limit', '16', 0),
 (17673, 0, 'theme_default', 'theme_default_status', '1', 0),
-(17672, 0, 'theme_default', 'theme_default_directory', 'so-buyshop', 0);
+(17672, 0, 'theme_default', 'theme_default_directory', 'so-buyshop', 0),
+(18681, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(18680, 0, 'config', 'config_tax_default', 'shipping', 0),
+(18679, 0, 'config', 'config_tax', '1', 0),
+(18678, 0, 'config', 'config_voucher_max', '1000', 0),
+(18677, 0, 'config', 'config_voucher_min', '1', 0),
+(18676, 0, 'config', 'config_review_guest', '1', 0),
+(18675, 0, 'config', 'config_review_status', '1', 0),
+(18674, 0, 'config', 'config_limit_admin', '20', 0),
+(18673, 0, 'config', 'config_product_count', '1', 0),
+(18672, 0, 'config', 'config_weight_class_id', '1', 0),
+(18671, 0, 'config', 'config_length_class_id', '1', 0),
+(18670, 0, 'config', 'config_currency_auto', '1', 0),
+(18669, 0, 'config', 'config_currency', 'USD', 0),
+(18668, 0, 'config', 'config_admin_language', 'en-gb', 0),
+(18667, 0, 'config', 'config_language', 'en-gb', 0),
+(18666, 0, 'config', 'config_zone_id', '322', 0),
+(18665, 0, 'config', 'config_country_id', '18', 0),
+(18664, 0, 'config', 'config_comment', '', 0),
+(18663, 0, 'config', 'config_open', '', 0),
+(18662, 0, 'config', 'config_image', 'catalog/protidin_logo.png', 0),
+(18661, 0, 'config', 'config_fax', 'firoz16545', 0),
+(18660, 0, 'config', 'config_telephone', '123456789', 0),
+(18658, 0, 'config', 'config_geocode', '', 0),
+(18659, 0, 'config', 'config_email', 'firoz.sysable@gmail.com', 0),
+(18657, 0, 'config', 'config_address', '65 Elephant ', 0),
+(18656, 0, 'config', 'config_owner', 'Protidin', 0),
+(18655, 0, 'config', 'config_name', 'Protidin', 0),
+(18654, 0, 'config', 'config_layout_id', '4', 0),
+(18653, 0, 'config', 'config_theme', 'default', 0),
+(18652, 0, 'config', 'config_meta_keyword', '', 0),
+(18651, 0, 'config', 'config_meta_description', 'Protidin', 0),
+(18650, 0, 'config', 'config_meta_title', 'Protidin', 0);
 
 -- --------------------------------------------------------
 
@@ -8095,7 +8208,7 @@ INSERT INTO `pro_simple_blog_category_description` (`simple_blog_category_descri
 
 CREATE TABLE `pro_soconfig` (
   `id` int(11) NOT NULL,
-  `store_id` int(11) NOT NULL DEFAULT '0',
+  `store_id` int(11) NOT NULL DEFAULT 0,
   `key` varchar(255) NOT NULL,
   `value` mediumtext NOT NULL,
   `serialized` tinyint(1) NOT NULL
@@ -8355,13 +8468,13 @@ CREATE TABLE `pro_statistics` (
 --
 
 INSERT INTO `pro_statistics` (`statistics_id`, `code`, `value`) VALUES
-(1, 'order_sale', 0.0000),
-(2, 'order_processing', 0.0000),
-(3, 'order_complete', 0.0000),
-(4, 'order_other', 0.0000),
-(5, 'returns', 0.0000),
-(6, 'product', 0.0000),
-(7, 'review', 0.0000);
+(1, 'order_sale', '0.0000'),
+(2, 'order_processing', '0.0000'),
+(3, 'order_complete', '0.0000'),
+(4, 'order_other', '0.0000'),
+(5, 'returns', '0.0000'),
+(6, 'product', '0.0000'),
+(7, 'review', '0.0000');
 
 -- --------------------------------------------------------
 
@@ -8428,9 +8541,9 @@ INSERT INTO `pro_tax_class` (`tax_class_id`, `title`, `description`, `date_added
 
 CREATE TABLE `pro_tax_rate` (
   `tax_rate_id` int(11) NOT NULL,
-  `geo_zone_id` int(11) NOT NULL DEFAULT '0',
+  `geo_zone_id` int(11) NOT NULL DEFAULT 0,
   `name` varchar(32) NOT NULL,
-  `rate` decimal(15,4) NOT NULL DEFAULT '0.0000',
+  `rate` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `type` char(1) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
@@ -8441,8 +8554,8 @@ CREATE TABLE `pro_tax_rate` (
 --
 
 INSERT INTO `pro_tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
-(86, 3, 'VAT (20%)', 20.0000, 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
-(87, 3, 'Eco Tax (-2.00)', 2.0000, 'F', '2011-09-21 21:49:23', '2011-09-23 00:40:19');
+(86, 3, 'VAT (20%)', '20.0000', 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
+(87, 3, 'Eco Tax (-2.00)', '2.0000', 'F', '2011-09-21 21:49:23', '2011-09-23 00:40:19');
 
 -- --------------------------------------------------------
 
@@ -8474,7 +8587,7 @@ CREATE TABLE `pro_tax_rule` (
   `tax_class_id` int(11) NOT NULL,
   `tax_rate_id` int(11) NOT NULL,
   `based` varchar(10) NOT NULL,
-  `priority` int(5) NOT NULL DEFAULT '1'
+  `priority` int(5) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -8559,7 +8672,7 @@ CREATE TABLE `pro_user` (
 --
 
 INSERT INTO `pro_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'admin', 'f0a2df54e901e47287b5020233b11da635b961fe', 'WdKCaQ9HR', 'John', 'Doe', 'firoz.sysable@gmail.com', '', '', '103.208.134.33', 1, '2021-01-07 05:37:17');
+(1, 1, 'admin', 'f0a2df54e901e47287b5020233b11da635b961fe', 'WdKCaQ9HR', 'John', 'Doe', 'firoz.sysable@gmail.com', '', '', '127.0.0.1', 1, '2021-01-07 05:37:17');
 
 -- --------------------------------------------------------
 
@@ -8665,7 +8778,7 @@ INSERT INTO `pro_voucher_theme_description` (`voucher_theme_id`, `language_id`, 
 
 CREATE TABLE `pro_weight_class` (
   `weight_class_id` int(11) NOT NULL,
-  `value` decimal(15,8) NOT NULL DEFAULT '0.00000000'
+  `value` decimal(15,8) NOT NULL DEFAULT 0.00000000
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -8673,10 +8786,10 @@ CREATE TABLE `pro_weight_class` (
 --
 
 INSERT INTO `pro_weight_class` (`weight_class_id`, `value`) VALUES
-(1, 1.00000000),
-(2, 1000.00000000),
-(5, 2.20460000),
-(6, 35.27400000);
+(1, '1.00000000'),
+(2, '1000.00000000'),
+(5, '2.20460000'),
+(6, '35.27400000');
 
 -- --------------------------------------------------------
 
@@ -8712,7 +8825,7 @@ CREATE TABLE `pro_zone` (
   `country_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `code` varchar(32) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1'
+  `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -12840,7 +12953,7 @@ INSERT INTO `pro_zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUE
 CREATE TABLE `pro_zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL,
   `country_id` int(11) NOT NULL,
-  `zone_id` int(11) NOT NULL DEFAULT '0',
+  `zone_id` int(11) NOT NULL DEFAULT 0,
   `geo_zone_id` int(11) NOT NULL,
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL
@@ -13175,6 +13288,12 @@ ALTER TABLE `pro_customer_online`
 --
 ALTER TABLE `pro_customer_reward`
   ADD PRIMARY KEY (`customer_reward_id`);
+
+--
+-- Indexes for table `pro_customer_rewards`
+--
+ALTER TABLE `pro_customer_rewards`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pro_customer_search`
@@ -13670,6 +13789,18 @@ ALTER TABLE `pro_review`
   ADD KEY `product_id` (`product_id`);
 
 --
+-- Indexes for table `pro_rewards_setting`
+--
+ALTER TABLE `pro_rewards_setting`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pro_reward_rate_setting`
+--
+ALTER TABLE `pro_reward_rate_setting`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pro_seo_url`
 --
 ALTER TABLE `pro_seo_url`
@@ -13903,7 +14034,7 @@ ALTER TABLE `pro_banner_image`
 -- AUTO_INCREMENT for table `pro_cart`
 --
 ALTER TABLE `pro_cart`
-  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pro_category`
@@ -13988,6 +14119,12 @@ ALTER TABLE `pro_customer_login`
 --
 ALTER TABLE `pro_customer_reward`
   MODIFY `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pro_customer_rewards`
+--
+ALTER TABLE `pro_customer_rewards`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `pro_customer_search`
@@ -14161,7 +14298,7 @@ ALTER TABLE `pro_option_value`
 -- AUTO_INCREMENT for table `pro_order`
 --
 ALTER TABLE `pro_order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pro_order_history`
@@ -14179,7 +14316,7 @@ ALTER TABLE `pro_order_option`
 -- AUTO_INCREMENT for table `pro_order_product`
 --
 ALTER TABLE `pro_order_product`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7285;
 
 --
 -- AUTO_INCREMENT for table `pro_order_recurring`
@@ -14209,7 +14346,7 @@ ALTER TABLE `pro_order_status`
 -- AUTO_INCREMENT for table `pro_order_total`
 --
 ALTER TABLE `pro_order_total`
-  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
+  MODIFY `order_total_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11041;
 
 --
 -- AUTO_INCREMENT for table `pro_order_voucher`
@@ -14302,6 +14439,18 @@ ALTER TABLE `pro_review`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `pro_rewards_setting`
+--
+ALTER TABLE `pro_rewards_setting`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `pro_reward_rate_setting`
+--
+ALTER TABLE `pro_reward_rate_setting`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `pro_seo_url`
 --
 ALTER TABLE `pro_seo_url`
@@ -14311,7 +14460,7 @@ ALTER TABLE `pro_seo_url`
 -- AUTO_INCREMENT for table `pro_setting`
 --
 ALTER TABLE `pro_setting`
-  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17954;
+  MODIFY `setting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18737;
 
 --
 -- AUTO_INCREMENT for table `pro_simple_blog_category`
