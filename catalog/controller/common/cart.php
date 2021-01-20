@@ -52,8 +52,7 @@ class ControllerCommonCart extends Controller {
 
 		if (isset($this->session->data['customer_id']))	{
 			$deduction = $this->model_account_wallet->getDeductionRate();
-			$deductionrate = $deduction['deduction_rate'];
-
+			$deductionrate = $deduction['percentage_value'];
 			$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
 			$walletpoint = $point['reward_point'];
 			$percent = $walletpoint*$deductionrate/100;
@@ -155,7 +154,9 @@ class ControllerCommonCart extends Controller {
 
 			if (isset($this->session->data['customer_id']))	{
 				$deduction = $this->model_account_wallet->getDeductionRate();
-				$deductionrate = $deduction['deduction_rate'];
+					if()
+				$deduction = $this->model_account_wallet->getRewardRate();
+				$deductionrate = $deduction['percentage_value'];
 
 				$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
 				$walletpoint = $point['reward_point'];
