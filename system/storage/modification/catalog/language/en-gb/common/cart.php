@@ -5,3 +5,5 @@ $_['text_items']     = '%s item(s) - %s';
 $_['text_cart']      = 'View Cart';
 $_['text_checkout']  = 'Checkout';
 $_['text_recurring'] = 'Payment Profile';
+$_['text_username']  = 'User:';
+$_['text_wallet']    = 'Wallet:';

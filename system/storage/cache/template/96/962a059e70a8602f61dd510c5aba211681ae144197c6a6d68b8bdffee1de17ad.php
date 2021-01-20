@@ -779,6 +779,6 @@ class __TwigTemplate_c2989f954e03e2e357ac79be06a6c4129162fe742975a7029c7a82605c0
 
     public function getSourceContext()
     {
-        return new Source("", "so-buyshop/template/common/header.twig", "/home/azhkhn/public_html/protidin.com.bd/system/storage/modification/catalog/view/theme/so-buyshop/template/common/header.twig");
+        return new Source("", "so-buyshop/template/common/header.twig", "/opt/lampp/htdocs/protidin/system/storage/modification/catalog/view/theme/so-buyshop/template/common/header.twig");
     }
 }

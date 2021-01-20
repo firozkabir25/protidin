@@ -2,6 +2,7 @@
 class ControllerCheckoutCart extends Controller {
 	public function index() {
 		$this->load->language('checkout/cart');
+		$this->load->model('account/wallet');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -107,10 +108,32 @@ class ControllerCheckoutCart extends Controller {
 
 				// Display prices
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+					//---------Wallet Percent-------------//
+					$this->load->model('account/wallet');
+
+					if ($this->customer->isLogged()){
+					$deduction = $this->model_account_wallet->getDeductionRate();
+					$deductionrate = $deduction['deduction_rate'];
+					$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
+					$walletpoint = $point['reward_point'];
+					$percent = $walletpoint*$deductionrate/100;
+					}
+					else{
+						$percent = 0;
+					}
+					
 					$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
 					
 					$price = $this->currency->format($unit_price, $this->session->data['currency']);
-					$total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+					$total_price = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+					
+					if($total_price>0){
+						$total = $total_price - $percent;
+					}
+					else{
+						$total = 0;
+					}
+					
 				} else {
 					$price = false;
 					$total = false;
@@ -352,7 +375,23 @@ class ControllerCheckoutCart extends Controller {
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 					$sort_order = array();
 
-					$results = $this->model_setting_extension->getExtensions('total');
+					$this->load->model('account/wallet');
+
+					//---------Wallet Percent-------------//
+					if ($this->customer->isLogged()){
+					$deduction = $this->model_account_wallet->getDeductionRate();
+					$deductionrate = $deduction['deduction_rate'];
+					
+					$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
+					$walletpoint = $point['reward_point'];
+					$percent = $walletpoint*$deductionrate/100;
+					}
+					else {
+						$percent = 0;
+					}
+					$resultss = $this->model_setting_extension->getExtensions('total');
+
+					$results = $resultss;
 
 					foreach ($results as $key => $value) {
 						$sort_order[$key] = $this->config->get('total_' . $value['code'] . '_sort_order');
@@ -377,13 +416,20 @@ class ControllerCheckoutCart extends Controller {
 
 					array_multisort($sort_order, SORT_ASC, $totals);
 				}
+				if($total>0){
+					$totalvalue = $total - $percent;
+				}
+				else{
+					$totalvalue = 0;
+				}
 
-				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($totalvalue, $this->session->data['currency']));
 			} else {
 				$json['redirect'] = str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']));
 			}
 		}
-
+		
+		
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
@@ -476,8 +522,28 @@ class ControllerCheckoutCart extends Controller {
 
 				array_multisort($sort_order, SORT_ASC, $totals);
 			}
+			
+				//---------Wallet Percent-------------//
+			if ($this->customer->isLogged()){
+				$deduction = $this->model_account_wallet->getDeductionRate();
+				$deductionrate = $deduction['deduction_rate'];
+				
+				$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
+				$walletpoint = $point['reward_point'];
+				$percent = $walletpoint*$deductionrate/100;
+				}
+				else {
+					$percent = 0;
+				}
 
-			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+				if($total>0){
+					$totalvalue = $total - $percent;
+				}
+				else{
+					$totalvalue = 0;
+				}
+
+			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($totalvalue, $this->session->data['currency']));
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

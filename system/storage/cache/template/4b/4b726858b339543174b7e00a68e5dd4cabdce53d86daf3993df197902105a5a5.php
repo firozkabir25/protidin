@@ -212,7 +212,7 @@ class __TwigTemplate_8a1213be9d640ec4ce715451dc82f90609fda83a8882eb415c3abd83977
         // line 72
         if (($context["search_block"] ?? null)) {
             // line 73
-            echo "\t\t\t\t\t\t\t<div class=\"search-header-w col-lg-9 col-md-8 col-sm-8 col-xs-12\">
+            echo "\t\t\t\t\t\t\t<div class=\"search-header-w col-lg-8 col-md-8 col-sm-8 col-xs-12\">
 \t\t\t\t\t\t\t\t<span class=\"hidden-lg hidden-md hidden-sm search-mobi\"><i class=\"fa fa-search\"></i></span>\t
 \t\t\t\t\t\t\t\t<div class=\"searchbox\">\t\t\t
 \t\t\t\t\t\t\t\t ";
@@ -225,13 +225,14 @@ class __TwigTemplate_8a1213be9d640ec4ce715451dc82f90609fda83a8882eb415c3abd83977
         }
         // line 79
         echo " 
-\t\t\t\t\t\t\t
+\t\t\t\t\t\t<div class=\"col-lg-4 col-md-4 col-sm-12 col-xs-12\">
 \t\t\t\t\t\t\t<div class=\"shopping_cart\">\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t \t";
         // line 82
         echo ($context["cart"] ?? null);
         echo "
 \t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -242,7 +243,7 @@ class __TwigTemplate_8a1213be9d640ec4ce715451dc82f90609fda83a8882eb415c3abd83977
 \t
 \t<!-- HEADER BOTTOM -->
 \t<div class=\"header-bottom ";
-        // line 93
+        // line 94
         echo ($context["hidden_headerbottom"] ?? null);
         echo "\">
 \t\t<div class=\"container\">
@@ -251,7 +252,7 @@ class __TwigTemplate_8a1213be9d640ec4ce715451dc82f90609fda83a8882eb415c3abd83977
 \t\t\t\t<div class=\"col-lg-3 col-md-3 col-sm-2 col-xs-2 menu-vertical\">
 \t\t\t\t\t<div class=\" megamenu-dev\">
 \t\t\t\t\t";
-        // line 99
+        // line 100
         echo ($context["content_menu2"] ?? null);
         echo "
 \t\t\t\t\t</div>
@@ -260,7 +261,7 @@ class __TwigTemplate_8a1213be9d640ec4ce715451dc82f90609fda83a8882eb415c3abd83977
 \t\t\t\t\t<div class=\"megamenu-style-dev megamenu-dev\">
 \t\t\t\t\t\t<!-- BOX CONTENT MENU -->
 \t\t\t\t\t\t";
-        // line 105
+        // line 106
         echo ($context["content_menu1"] ?? null);
         echo "\t
 \t\t\t\t\t</div>\t\t\t\t
@@ -271,7 +272,8 @@ class __TwigTemplate_8a1213be9d640ec4ce715451dc82f90609fda83a8882eb415c3abd83977
 \t</div>
 \t
 \t
-</header>";
+</header>
+";
     }
 
     public function getTemplateName()
@@ -286,11 +288,11 @@ class __TwigTemplate_8a1213be9d640ec4ce715451dc82f90609fda83a8882eb415c3abd83977
 
     public function getDebugInfo()
     {
-        return array (  264 => 105,  255 => 99,  246 => 93,  232 => 82,  227 => 79,  220 => 76,  215 => 73,  213 => 72,  205 => 67,  196 => 61,  187 => 54,  176 => 52,  170 => 51,  167 => 50,  165 => 49,  161 => 47,  155 => 45,  152 => 44,  150 => 43,  142 => 37,  129 => 36,  126 => 35,  119 => 34,  115 => 33,  109 => 29,  103 => 27,  101 => 26,  96 => 23,  86 => 22,  83 => 21,  78 => 18,  72 => 17,  70 => 16,  67 => 15,  65 => 14,  61 => 13,  54 => 9,  51 => 8,  46 => 6,  43 => 5,  41 => 4,  39 => 3,  37 => 2,);
+        return array (  265 => 106,  256 => 100,  247 => 94,  232 => 82,  227 => 79,  220 => 76,  215 => 73,  213 => 72,  205 => 67,  196 => 61,  187 => 54,  176 => 52,  170 => 51,  167 => 50,  165 => 49,  161 => 47,  155 => 45,  152 => 44,  150 => 43,  142 => 37,  129 => 36,  126 => 35,  119 => 34,  115 => 33,  109 => 29,  103 => 27,  101 => 26,  96 => 23,  86 => 22,  83 => 21,  78 => 18,  72 => 17,  70 => 16,  67 => 15,  65 => 14,  61 => 13,  54 => 9,  51 => 8,  46 => 6,  43 => 5,  41 => 4,  39 => 3,  37 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "so-buyshop/template/header/header2.twig", "/home/azhkhn/public_html/protidin.com.bd/catalog/view/theme/so-buyshop/template/header/header2.twig");
+        return new Source("", "so-buyshop/template/header/header2.twig", "/opt/lampp/htdocs/protidin/catalog/view/theme/so-buyshop/template/header/header2.twig");
     }
 }
