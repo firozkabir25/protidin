@@ -48,26 +48,9 @@ class ControllerCommonCart extends Controller {
 			array_multisort($sort_order, SORT_ASC, $totals);
 		}
 		
-		//---------Wallet Percent-------------//
+		$total; 
 
-		if (isset($this->session->data['customer_id']))	{
-			$deduction = $this->model_account_wallet->getDeductionRate();
-			$deductionrate = $deduction['percentage_value'];
-			$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
-			$walletpoint = $point['reward_point'];
-			$percent = $walletpoint*$deductionrate/100;
-		}
-		else{
-			$percent=0;
-		}
-
-		if ($total>0) {
-			$totalwp = $total - $percent;
-		}else {
-			$totalwp = 0;
-		}
-
-		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($totalwp, $this->session->data['currency']));
+		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
 
 		$this->load->model('tool/image');
 		$this->load->model('tool/upload');
@@ -109,6 +92,7 @@ class ControllerCommonCart extends Controller {
 				
 				$price = $this->currency->format($unit_price, $this->session->data['currency']);
 				$total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+
 			} else {
 				$price = false;
 				$total = false;
@@ -153,24 +137,38 @@ class ControllerCommonCart extends Controller {
 			$data['user'] = $this->customer->getFirstName()." ". $this->customer->getLastName();
 
 			if (isset($this->session->data['customer_id']))	{
-				$deduction = $this->model_account_wallet->getDeductionRate();
-					if()
-				$deduction = $this->model_account_wallet->getRewardRate();
-				$deductionrate = $deduction['percentage_value'];
+						//---------Wallet Percent-------------//
+			if (isset($this->session->data['customer_id']))	{
+				$max_amount = $this->model_account_wallet->getRewardRate();
+				$max_value = $max_amount['max_amount'];
+				$percentage_value = $max_amount['percentage_value'];
+
+				$enable_rate = $this->model_account_wallet->getEnableRate(['is_percentage, is_fixed']);
+					$is_percentage = $enable_rate['is_percentage'];
+					$is_fixed = $enable_rate['is_fixed'];
+					$parchage_total = $total['value'];		
+					
+						if($is_percentage==1){
+							// print_r($parchage_total);
+							if($max_value<=(int)$parchage_total){
+								$total_value = $parchage_total*$percentage_value/100;
+								$total = $parchage_total - $total_value;
+							}	
+						}
+						if($is_fixed ==1){
+							// print_r($parchage_total);
+							if($max_value<=(int)$parchage_total){
+								$total_value = $parchage_total*$percentage_value/100;
+								$total = $parchage_total - $total_value;
+							}	
+						}
+				}
 
 				$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
 				$walletpoint = $point['reward_point'];
-				$percent = $walletpoint*$deductionrate/100;
-
-				$data['wallet'] = $walletpoint - $percent;
-			}else {
-				$data['wallet']= '00.00';	
+				$data['wallet'] = $walletpoint-$total_value;
 			}
 		}
-		else{
-			$data['wallet']= '00.00';
-		}
-
 
 		$data['cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);

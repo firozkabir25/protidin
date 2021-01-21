@@ -198,3 +198,352 @@
 2021-01-20 5:59:45 - PHP Notice:  Undefined index: deduction_rate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
 2021-01-20 5:59:45 - PHP Notice:  Undefined index: deduction_rate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
 2021-01-20 5:59:45 - PHP Notice:  Undefined index: deduction_rate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 4:42:17 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611207737): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 4:42:21 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611207741): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 4:42:31 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611207751): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 4:45:44 - PHP Notice:  Undefined index: percentage_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 4:45:44 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 162
+2021-01-21 4:50:01 - PHP Notice:  Undefined index: percentage_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 4:50:01 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 162
+2021-01-21 4:50:32 - PHP Notice:  Undefined variable: deductionrate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 63
+2021-01-21 4:50:32 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 162
+2021-01-21 4:50:44 - PHP Notice:  Undefined variable: deductionrate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 63
+2021-01-21 4:50:44 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 162
+2021-01-21 4:51:50 - PHP Notice:  Undefined index: is_percent in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 4:51:50 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 162
+2021-01-21 4:54:24 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 4:54:55 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 4:55:55 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 4:57:12 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 4:57:13 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 4:57:44 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 5:04:25 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 5:05:06 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 5:05:08 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 5:05:13 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 5:09:16 - PHP Notice:  Undefined index: $is_percentage in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 60
+2021-01-21 5:12:12 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 61
+2021-01-21 5:13:16 - PHP Notice:  Undefined variable: totalwp in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 61
+2021-01-21 5:16:24 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 62
+2021-01-21 5:20:23 - PHP Notice:  Undefined variable: deductionrate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 80
+2021-01-21 5:20:23 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 179
+2021-01-21 5:20:57 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 179
+2021-01-21 5:22:48 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 179
+2021-01-21 5:23:01 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 179
+2021-01-21 5:32:06 - PHP Notice:  Undefined variable: id in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 74
+2021-01-21 5:34:05 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/catalog/model/account/wallet.php on line 20
+2021-01-21 5:36:59 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/catalog/model/account/wallet.php on line 20
+2021-01-21 5:36:59 - PHP Notice:  Undefined index: max_amount in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 75
+2021-01-21 6:04:55 - PHP Unknown:  Object of class ControllerCommonCart could not be converted to string in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 75
+2021-01-21 6:04:55 - PHP Notice:  Undefined variable:  in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 75
+2021-01-21 6:04:55 - PHP Notice:  Trying to get property 'model_account_wallet' of non-object in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 75
+2021-01-21 6:06:02 - PHP Unknown:  Object of class ControllerCommonCart could not be converted to string in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 75
+2021-01-21 6:06:02 - PHP Notice:  Undefined variable:  in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 75
+2021-01-21 6:06:02 - PHP Notice:  Trying to get property 'model_account_wallet' of non-object in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 75
+2021-01-21 6:06:41 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 178
+2021-01-21 6:13:23 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 180
+2021-01-21 6:19:30 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 180
+2021-01-21 6:21:46 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 145
+2021-01-21 6:21:57 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 145
+2021-01-21 6:22:06 - PHP Notice:  Undefined offset: 1 in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 145
+2021-01-21 6:30:52 - PHP Notice:  Undefined index: deduction_rate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 383
+2021-01-21 6:30:56 - PHP Notice:  Undefined index: deduction_rate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 383
+2021-01-21 6:34:46 - PHP Notice:  Undefined index: deduction_rate in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 383
+2021-01-21 6:36:22 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611214582): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 6:36:39 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611214599): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 6:38:27 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:38:27 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:40:03 - PHP Notice:  Undefined index: max_amount in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:40:04 - PHP Notice:  Undefined index: max_amount in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:42:10 - PHP Notice:  Undefined index: max_amount in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:42:10 - PHP Notice:  Undefined index: max_amount in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:42:50 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:42:51 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:44:52 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 6:44:52 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 7:20:58 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 151
+2021-01-21 7:20:58 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 151
+2021-01-21 7:21:35 - PHP Notice:  Undefined index: total in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 151
+2021-01-21 7:21:35 - PHP Notice:  Undefined index: total in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 151
+2021-01-21 8:29:05 - PHP Notice:  Undefined variable: mtotal in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 166
+2021-01-21 8:44:27 - PHP Notice:  Undefined variable: rewardtotal in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 155
+2021-01-21 8:45:04 - PHP Notice:  Undefined variable: rewardtotal in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 155
+2021-01-21 8:50:25 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611222624): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 8:51:58 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611222718): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 8:55:49 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611222949): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 9:03:30 - PHP Notice:  Undefined index: total in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 163
+2021-01-21 9:08:52 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 110
+2021-01-21 9:08:52 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 111
+2021-01-21 9:09:38 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 110
+2021-01-21 9:09:38 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 111
+2021-01-21 9:09:43 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 110
+2021-01-21 9:09:43 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 111
+2021-01-21 9:09:51 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 110
+2021-01-21 9:09:51 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 111
+2021-01-21 9:09:57 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 110
+2021-01-21 9:09:57 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 111
+2021-01-21 9:11:22 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 110
+2021-01-21 9:11:22 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 111
+2021-01-21 9:12:00 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 110
+2021-01-21 9:12:00 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 111
+2021-01-21 9:15:33 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 112
+2021-01-21 9:15:33 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 113
+2021-01-21 9:15:36 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 112
+2021-01-21 9:15:36 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 113
+2021-01-21 9:15:54 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 112
+2021-01-21 9:15:54 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 113
+2021-01-21 9:15:54 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 112
+2021-01-21 9:15:54 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 113
+2021-01-21 9:20:15 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 114
+2021-01-21 9:20:15 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:20:50 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:20:50 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:20:52 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:20:52 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:21:05 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:21:05 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:21:05 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:21:05 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:22:16 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:22:16 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:22:16 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:22:16 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:22:41 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:22:41 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 115
+2021-01-21 9:35:48 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611225348): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 10:07:11 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:07:11 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:07:11 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:07:11 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:07:11 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:07:11 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:07:11 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:07:11 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:09:01 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:09:01 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:09:01 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:09:01 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:09:02 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:09:02 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:09:02 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:09:02 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:10:13 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:10:13 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:10:13 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:10:13 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:10:14 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:10:14 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:10:14 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:10:14 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:18 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:18 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:18 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:18 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:31 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:31 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:31 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:11:35 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:35 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:35 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:11:35 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:35 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:35 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:11:46 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:46 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:46 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:11:46 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:46 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 10:11:46 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:12:24 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:12:24 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:13:34 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:13:34 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:13:38 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:13:38 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 171
+2021-01-21 10:14:23 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 169
+2021-01-21 10:14:23 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 169
+2021-01-21 10:16:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 161
+2021-01-21 10:16:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 169
+2021-01-21 10:16:19 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 161
+2021-01-21 10:16:19 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 169
+2021-01-21 12:37:03 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 12:37:03 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 12:37:03 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 12:37:03 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 12:37:03 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 12:37:03 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 12:37:03 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 12:37:03 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 100
+2021-01-21 12:38:36 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:38:36 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:38:36 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:38:36 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:38:36 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:38:36 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:38:36 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:38:36 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:39:51 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:39:51 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:39:51 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:39:51 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:39:51 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:39:51 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:39:51 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:39:51 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:52 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:52 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:52 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:52 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:52 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:52 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:52 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:52 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:59 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:59 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:59 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:40:59 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 124
+2021-01-21 12:43:48 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:43:48 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:43:48 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:43:48 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:43:48 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:43:48 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:43:48 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:43:48 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:44:42 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:44:42 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:44:42 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:44:42 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:44:42 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:44:42 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:44:42 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:44:42 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:42 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:42 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:42 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:42 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:43 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:43 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:43 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:43 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:50 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:50 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:50 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:50 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:50 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:50 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:50 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:45:50 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:46:30 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:46:30 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:46:30 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:46:30 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:46:30 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:46:30 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:46:30 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:46:30 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:25 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:25 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:25 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:25 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:25 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:25 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:25 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:25 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:33 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:33 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:33 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:33 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:33 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:33 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:33 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:33 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:37 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:37 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:37 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:37 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:38 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:38 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:38 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:47:38 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:48:38 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:48:38 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 127
+2021-01-21 12:50:10 - PHP Notice:  Undefined variable: total_per in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 128
+2021-01-21 12:50:10 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 128
+2021-01-21 12:50:37 - PHP Notice:  Undefined variable: total_per in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 128
+2021-01-21 12:50:37 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 128
+2021-01-21 12:56:38 - PHP Notice:  Undefined variable: total_per in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 128
+2021-01-21 12:56:38 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 128
+2021-01-21 12:56:43 - PHP Warning:  Illegal string offset 'value' in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-21 12:56:44 - PHP Warning:  Illegal string offset 'value' in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-21 12:56:48 - PHP Warning:  Illegal string offset 'value' in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-21 12:56:49 - PHP Warning:  Illegal string offset 'value' in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-21 12:59:00 - PHP Warning:  Illegal string offset 'value' in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 107
+2021-01-21 12:59:00 - PHP Warning:  Illegal string offset 'value' in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 107
+2021-01-21 12:59:04 - PHP Warning:  Illegal string offset 'value' in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 107
+2021-01-21 12:59:05 - PHP Warning:  Illegal string offset 'value' in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 107
+2021-01-21 13:11:13 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 482
+2021-01-21 13:33:01 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 89
+2021-01-21 13:33:01 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 89
+2021-01-21 13:34:22 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 89
+2021-01-21 13:34:23 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 89
+2021-01-21 13:34:26 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:34:27 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:35:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:35:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:35:29 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-21 13:35:38 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:35:38 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:36:42 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:36:42 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:38:44 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-21 13:38:50 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:38:50 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:38:58 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-21 13:39:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:39:18 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:40:48 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:40:48 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 81
+2021-01-21 13:41:10 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:41:10 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:42:09 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:42:10 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:42:19 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:42:19 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:08 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:09 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611240188): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 13:43:12 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611240192): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 13:43:14 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:22 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:29 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:30 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:30 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:31 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:31 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:31 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:31 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:31 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:32 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:32 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:32 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:33 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:33 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:45 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:49 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:53 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:54 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:54 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:54 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:54 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:43:54 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:44:33 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:44:37 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:44:43 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:44:47 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:44:51 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
+2021-01-21 13:45:01 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611240301): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-21 13:45:19 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611240319): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68

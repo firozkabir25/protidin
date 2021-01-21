@@ -10,15 +10,17 @@ class ModelAccountWallet extends Model{
         return $query->row;
         
     }
-    public function getDeductionRate(){
-        $query = $this->db->query("SELECT reward_point, is_percentage, is_fixed, FROM " . DB_PREFIX . "rewards_setting");
+    public function getEnableRate(){
+        $query = $this->db->query("SELECT reward_point, is_percentage, is_fixed FROM " . DB_PREFIX . "rewards_setting");
         return $query->row;
         
     }
 
     public function getRewardRate(){
-        $query = $this->db->query("SELECT* FROM ". DB_PREFIX ." reward_rate_setting ORDER BY id ASC limit='1'");
+        $sql = "SELECT * FROM ". DB_PREFIX ."reward_rate_setting ORDER BY id ASC LIMIT 1";
+        $query= $this->db->query($sql);
         return $query->row;
+
     } 
 }
 

@@ -3,6 +3,7 @@ class ControllerCheckoutCart extends Controller {
 	public function index() {
 		$this->load->language('checkout/cart');
 		$this->load->model('account/wallet');
+		$this->load->model('setting/extension');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -100,27 +101,40 @@ class ControllerCheckoutCart extends Controller {
 
 				// Display prices
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					//---------Wallet Percent-------------//
-					$this->load->model('account/wallet');
+					 $this->load->model('account/wallet');
+						//---------Wallet Percent-------------//
+			if (isset($this->session->data['customer_id']))	{
+				$max_amount = $this->model_account_wallet->getRewardRate();
+				$max_value = $max_amount['max_amount'];
+				$percentage_value = $max_amount['percentage_value'];
 
-					if ($this->customer->isLogged()){
-					$deduction = $this->model_account_wallet->getDeductionRate();
-					$deductionrate = $deduction['deduction_rate'];
-					$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
-					$walletpoint = $point['reward_point'];
-					$percent = $walletpoint*$deductionrate/100;
-					}
-					else{
-						$percent = 0;
-					}
+				$enable_rate = $this->model_account_wallet->getEnableRate(['is_percentage, is_fixed']);
+					$is_percentage = $enable_rate['is_percentage'];
+					$is_fixed = $enable_rate['is_fixed'];
+					$parchage_total = $total['value'];		
 					
+						if($is_percentage==1){
+							// print_r($parchage_total);
+							if($max_value<=(int)$parchage_total){
+								$total_value = $parchage_total*$percentage_value/100;
+								// $total = $parchage_total - $total_value;
+							}	
+						}
+						if($is_fixed ==1){
+							// print_r($parchage_total);
+							if($max_value<=(int)$parchage_total){
+								$total_value = $parchage_total*$percentage_value/100;
+								// $total = $parchage_total - $total_value;
+							}	
+						}
+				}					
 					$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
 					
 					$price = $this->currency->format($unit_price, $this->session->data['currency']);
-					$total_price = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+					$total_price= $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
 					
 					if($total_price>0){
-						$total = $total_price - $percent;
+						$total = $total_price - $total_value;
 					}
 					else{
 						$total = 0;
@@ -368,19 +382,44 @@ class ControllerCheckoutCart extends Controller {
 					$sort_order = array();
 
 					$this->load->model('account/wallet');
-
 					//---------Wallet Percent-------------//
-					if ($this->customer->isLogged()){
-					$deduction = $this->model_account_wallet->getDeductionRate();
-					$deductionrate = $deduction['deduction_rate'];
+			if (isset($this->session->data['customer_id']))	{
+				$max_amount = $this->model_account_wallet->getRewardRate();
+				$max_value = $max_amount['max_amount'];
+				$percentage_value = $max_amount['percentage_value'];
+
+				$enable_rate = $this->model_account_wallet->getEnableRate(['is_percentage, is_fixed']);
+					$is_percentage = $enable_rate['is_percentage'];
+					$is_fixed = $enable_rate['is_fixed'];
+					$parchage_total = $total['value'];		
 					
-					$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
-					$walletpoint = $point['reward_point'];
-					$percent = $walletpoint*$deductionrate/100;
-					}
-					else {
-						$percent = 0;
-					}
+						if($is_percentage==1){
+							// print_r($parchage_total);
+							if($max_value<=(int)$parchage_total){
+								$total_value = $parchage_total*$percentage_value/100;
+								// $total = $parchage_total - $total_value;
+							}	
+						}
+						if($is_fixed ==1){
+							// print_r($parchage_total);
+							if($max_value<=(int)$parchage_total){
+								$total_value = $parchage_total*$percentage_value/100;
+								// $total = $parchage_total - $total_value;
+							}	
+						}
+				}					
+					//---------Wallet Percent-------------//
+					// if ($this->customer->isLogged()){
+					// $deduction = $this->model_account_wallet->getEnableRate();
+					// $deductionrate = $deduction['deduction_rate'];
+					
+					// $point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
+					// $walletpoint = $point['reward_point'];
+					// $percent = $walletpoint*$deductionrate/100;
+					// }
+					// else {
+					// 	$percent = 0;
+					// }
 					$results = $this->model_setting_extension->getExtensions('total');
 
 					foreach ($results as $key => $value) {
@@ -407,12 +446,11 @@ class ControllerCheckoutCart extends Controller {
 					array_multisort($sort_order, SORT_ASC, $totals);
 				}
 				if($total>0){
-					$totalvalue = $total - $percent;
+					$totalvalue = $total - $total_value;
 				}
 				else{
 					$totalvalue = 0;
 				}
-
 				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($totalvalue, $this->session->data['currency']));
 			} else {
 				$json['redirect'] = str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']));
@@ -512,27 +550,51 @@ class ControllerCheckoutCart extends Controller {
 
 				array_multisort($sort_order, SORT_ASC, $totals);
 			}
-			
+			//---------Wallet Percent-------------//
+			if (isset($this->session->data['customer_id']))	{
+				$max_amount = $this->model_account_wallet->getRewardRate();
+				$max_value = $max_amount['max_amount'];
+				$percentage_value = $max_amount['percentage_value'];
+
+				$enable_rate = $this->model_account_wallet->getEnableRate(['is_percentage, is_fixed']);
+					$is_percentage = $enable_rate['is_percentage'];
+					$is_fixed = $enable_rate['is_fixed'];
+					$parchage_total = $total['value'];		
+					
+						if($is_percentage==1){
+							// print_r($parchage_total);
+							if($max_value<=(int)$parchage_total){
+								$total_value = $parchage_total*$percentage_value/100;
+								// $total = $parchage_total - $total_value;
+							}	
+						}
+						if($is_fixed ==1){
+							// print_r($parchage_total);
+							if($max_value<=(int)$parchage_total){
+								$total_value = $parchage_total*$percentage_value/100;
+								// $total = $parchage_total - $total_value;
+							}	
+						}
+				}
 				//---------Wallet Percent-------------//
-			if ($this->customer->isLogged()){
-				$deduction = $this->model_account_wallet->getDeductionRate();
-				$deductionrate = $deduction['deduction_rate'];
+			// if ($this->customer->isLogged()){
+			// 	$deduction = $this->model_account_wallet->getEnableRate();
+			// 	$deductionrate = $deduction['deduction_rate'];
 				
-				$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
-				$walletpoint = $point['reward_point'];
-				$percent = $walletpoint*$deductionrate/100;
-				}
-				else {
-					$percent = 0;
-				}
+			// 	$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
+			// 	$walletpoint = $point['reward_point'];
+			// 	$percent = $walletpoint*$deductionrate/100;
+			// 	}
+				// else {
+				// 	$percent = 0;
+				// }
 
 				if($total>0){
-					$totalvalue = $total - $percent;
+					$totalvalue = $total - $total_value;
 				}
 				else{
 					$totalvalue = 0;
 				}
-
 			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($totalvalue, $this->session->data['currency']));
 		}
 

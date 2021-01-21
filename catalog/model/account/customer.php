@@ -18,6 +18,19 @@ class ModelAccountCustomer extends Model {
 		if ($customer_group_info['approval']) {
 			$this->db->query("INSERT INTO `" . DB_PREFIX . "customer_approval` SET customer_id = '" . (int)$customer_id . "', type = 'customer', date_added = NOW()");
 		}
+		//============ Reward point fetch from db =================
+		$rewardObject = $this->db->query("SELECT * FROM ". DB_PREFIX ."rewards_setting ORDER BY id ASC LIMIT 1");
+		$rewardPoint = $rewardObject->row;
+		// print_r($rewardPoint);
+		// exit();
+
+		//============ Added for reward point assign to customer =================
+		$isExistRewardObject = $this->db->query("SELECT COUNT(*) as count FROM ". DB_PREFIX . "customer_rewards WHERE customer_id=". (int)$customer_id ."" );
+		$isExistRewardObjectCount = $isExistRewardObject->row;
+		
+		if ($isExistRewardObjectCount['count'] <= 0) {
+			$this->db->query("INSERT INTO ". DB_PREFIX ."customer_rewards SET customer_id ='". (int)$customer_id ."',reward_point='". $rewardPoint['reward_point'] . "',reward_date=NOW()" );
+		}
 		
 		return $customer_id;
 	}
