@@ -1,4 +1,4 @@
-2021-01-21 13:44:52 - MOD: Modification Default
+2021-01-23 13:12:46 - MOD: Modification Default
 
 FILE: system/engine/action.php
 REGEX: ~(require|include)(_once)?\(([^)]+)~
@@ -354,9 +354,9 @@ LINE: 72
 
 FILE: catalog/controller/checkout/cart.php
 CODE: $data['breadcrumbs'] = array();
-LINE: 17
+LINE: 15
 CODE: $image = '';
-LINE: 85
+LINE: 83
 CODE: $image = false;
 LINE: 68
 CODE: $data['thumb'] = '';

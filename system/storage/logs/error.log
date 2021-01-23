@@ -547,3 +547,32 @@
 2021-01-21 13:44:51 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 90
 2021-01-21 13:45:01 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611240301): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
 2021-01-21 13:45:19 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611240319): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-23 4:12:37 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-23 4:13:22 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-23 4:27:05 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-23 4:27:53 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611379673): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-23 4:28:00 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611379680): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-23 4:28:11 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611379691): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-23 4:29:02 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 173
+2021-01-23 4:29:02 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 173
+2021-01-23 4:29:02 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 173
+2021-01-23 4:29:02 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 173
+2021-01-23 4:29:08 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 173
+2021-01-23 4:29:08 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 173
+2021-01-23 4:29:14 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-23 4:29:19 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-23 4:29:23 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-23 4:29:26 - PHP Notice:  Undefined variable: total_value in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/checkout/cart.php on line 457
+2021-01-23 12:47:44 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611409664): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-23 12:50:34 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 12:50:34 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 12:50:34 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 12:50:34 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 13:10:04 - PHP Notice:  Undefined variable: totalll in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 13:10:04 - PHP Notice:  Undefined variable: totalll in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 13:10:04 - PHP Notice:  Undefined variable: totalll in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 13:10:04 - PHP Notice:  Undefined variable: totalll in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 13:10:44 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 13:10:44 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 13:10:44 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
+2021-01-23 13:10:44 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 108
