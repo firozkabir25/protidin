@@ -198,7 +198,7 @@ class __TwigTemplate_8a1213be9d640ec4ce715451dc82f90609fda83a8882eb415c3abd83977
 \t\t<div class=\"container\">
 \t\t\t<div class=\"row\">
 \t\t\t\t<!-- LOGO -->
-\t\t\t\t<div class=\"navbar-logo col-md-3 col-sm-12 col-xs-12\">
+\t\t\t\t<div class=\"navbar-logo col-md-2 col-sm-12 col-xs-12\">
 \t\t\t\t\t<div class=\"logo\">
 \t\t\t\t   \t\t";
         // line 67

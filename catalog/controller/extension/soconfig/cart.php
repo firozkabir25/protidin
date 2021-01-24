@@ -230,7 +230,7 @@ class ControllerExtensionSoconfigCart extends Controller {
 					'text'  => $this->currency->format($total['value'], $this->session->data['currency'])
 				);
 			}
-
+			$data['adjust'] = $this->cart->getWallets();
 			$data['continue'] = $this->url->link('common/home');
 
 			$data['checkout'] = $this->url->link('checkout/checkout', '', true);
@@ -250,7 +250,7 @@ class ControllerExtensionSoconfigCart extends Controller {
 					}
 				}
 			}
-
+			$data['adjust'] = $this->cart->getWallets();
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');

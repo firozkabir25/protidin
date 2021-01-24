@@ -2,6 +2,7 @@
 class ControllerExtensionModuleSoOnepageCheckout extends Controller {
 	public function index() {
 		$this->load->model('setting/setting');
+		$this->cart->getWallet();
 		$setting = $this->model_setting_setting->getSetting('so_onepagecheckout');
 
 		$this->load->language('extension/module/so_onepagecheckout');
@@ -36,6 +37,7 @@ class ControllerExtensionModuleSoOnepageCheckout extends Controller {
 			}
 		}
 
+		$data['adjust'] = $this->cart->getWallets();
 		$sort_order = array();
 
 		foreach ($method_data as $key => $value) {

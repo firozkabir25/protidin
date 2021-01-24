@@ -99,11 +99,24 @@ class ControllerCheckoutCart extends Controller {
 
 				// Display prices
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+					if ($this->customer->isLogged()){
+						$wallet_point = $this->cart->getWallets();
+					}
+					else{
+						$wallet_point =0;
+					}
+
 					$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
 					
 					$price = $this->currency->format($unit_price, $this->session->data['currency']);
-					$total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
-								
+					$total_price = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);			
+					
+					if($total_price>0){
+						$total = $total_price - $wallet_point;
+					}
+					else{
+						$total = 0;
+					}
 				} else {
 					$price = false;
 					$total = false;
@@ -233,6 +246,12 @@ class ControllerCheckoutCart extends Controller {
 					}
 				}
 			}
+			if ($this->customer->isLogged()){
+				$data['adjust']= $this->cart->getWallets();
+			}
+			else{
+				$data['adjust'] =0;
+			}
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
@@ -344,7 +363,13 @@ class ControllerCheckoutCart extends Controller {
 				// Display prices
 				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 					$sort_order = array();
-
+					//---------Wallet Percent-------------//
+					if ($this->customer->isLogged()){
+						$wallet_point = $this->cart->getWallets();
+					}
+					else{
+						$wallet_point =0;
+					}
 					$results = $this->model_setting_extension->getExtensions('total');
 
 					foreach ($results as $key => $value) {
@@ -370,8 +395,14 @@ class ControllerCheckoutCart extends Controller {
 
 					array_multisort($sort_order, SORT_ASC, $totals);
 				}
+					if($total>0){
+						$totalvalue = $total - $wallet_point;
+					}
+					else{
+						$totalvalue = 0;
+					}
 
-				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($totalvalue, $this->session->data['currency']));
 			} else {
 				$json['redirect'] = str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']));
 			}
@@ -443,9 +474,21 @@ class ControllerCheckoutCart extends Controller {
 			// Display prices
 			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 				$sort_order = array();
+				if ($this->customer->isLogged()){
+					$wallet_point = $this->cart->getWallets();
+				}
+				else{
+					$wallet_point =0;
+				}
+	
+				if($total>0){
+					$total = $total - $wallet_point;
+				}
+				else{
+					$total = 0;
+				}
 
 				$results = $this->model_setting_extension->getExtensions('total');
-
 				foreach ($results as $key => $value) {
 					$sort_order[$key] = $this->config->get('total_' . $value['code'] . '_sort_order');
 				}
@@ -470,9 +513,25 @@ class ControllerCheckoutCart extends Controller {
 				array_multisort($sort_order, SORT_ASC, $totals);
 			}
 
-			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
-		}
+			if ($this->customer->isLogged()){
+				$data['adjust'] = $this->cart->getWallets();
+			}
+			else{
+				$data['adjust']= '00.00';
+			}
 
+			//---------Wallet Percent-------------//
+			if($total>0){
+				$total_value = $total - $wallet_point;
+			}
+			else{
+				$total_value = 0;
+			}
+			$data['adjust'] = $this->cart->getWallets();
+
+			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total_value, $this->session->data['currency']));
+		}
+		
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}

@@ -13,7 +13,7 @@ use Twig\Source;
 use Twig\Template;
 
 /* default/template/extension/module/so_onepagecheckout/checkout/cart.twig */
-class __TwigTemplate_87a3843ef66f17bfe9d5591f5b7f1453e141d97d9fc83dc2212beb91c2f3943c extends \Twig\Template
+class __TwigTemplate_bfc8ed0d0c3d638320afc687669cae606dc246db39308f155b83837114b51659 extends \Twig\Template
 {
     private $source;
     private $macros = [];
@@ -281,6 +281,6 @@ class __TwigTemplate_87a3843ef66f17bfe9d5591f5b7f1453e141d97d9fc83dc2212beb91c2f
 
     public function getSourceContext()
     {
-        return new Source("", "default/template/extension/module/so_onepagecheckout/checkout/cart.twig", "/opt/lampp/htdocs/protidin/catalog/view/theme/default/template/extension/module/so_onepagecheckout/checkout/cart.twig");
+        return new Source("", "default/template/extension/module/so_onepagecheckout/checkout/cart.twig", "");
     }
 }

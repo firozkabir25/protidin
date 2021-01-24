@@ -26,24 +26,24 @@ class ControllerCommonCart extends Controller {
 		// Display prices
 		if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 			$sort_order = array();
-
 			$results = $this->model_setting_extension->getExtensions('total');
-
+			
 			foreach ($results as $key => $value) {
 				$sort_order[$key] = $this->config->get('total_' . $value['code'] . '_sort_order');
 			}
-
+			
 			array_multisort($sort_order, SORT_ASC, $results);
-
+			
 			foreach ($results as $result) {
 				if ($this->config->get('total_' . $result['code'] . '_status')) {
 					$this->load->model('extension/total/' . $result['code']);
-
+			
 					// We have to put the totals in an array so that they pass by reference.
 					$this->{'model_extension_total_' . $result['code']}->getTotal($total_data);
 				}
+				
 			}
-
+			
 			$sort_order = array();
 
 			foreach ($totals as $key => $value) {
@@ -52,16 +52,20 @@ class ControllerCommonCart extends Controller {
 
 			array_multisort($sort_order, SORT_ASC, $totals);
 		}
-
-		//----------------------------
-		if ($this->customer->isLogged()){
-			if($total>0){
-				$total = $total - $this->cart->getWallets();
-			}
-			else{
-				$total;
-			}
-		}
+		//---------Wallet Percent beside user name and loging wallet-------------//
+			// if ($this->customer->isLogged()){
+			// 	$wallet_point = $this->cart->getWallets();
+			// }
+			// else{
+			// 	$wallet_point =0;
+			// }
+	
+			// 	if($total>0){
+			// 		$total = $total - $wallet_point;
+			// 	}
+			// 	else{
+			// 		$total;
+			// 	}
 		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
 
 		$this->load->model('tool/image');
@@ -98,13 +102,13 @@ class ControllerCommonCart extends Controller {
 				);
 			}
 
-			// Display prices   ------------------per product total------------------
+			// Display prices
 			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 				$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
 				
 				$price = $this->currency->format($unit_price, $this->session->data['currency']);
 				$total = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
-
+			                               
 			} else {
 				$price = false;
 				$total = false;
@@ -147,14 +151,19 @@ class ControllerCommonCart extends Controller {
 		}
 		if ($this->customer->isLogged()){
 			$data['user'] = $this->customer->getFirstName()." ". $this->customer->getLastName();
-
 			if (isset($this->session->data['customer_id']))	{
-						//---------Wallet Percent-------------//
+				
 				$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
 				$walletpoint = $point['reward_point'];
-				$data['wallet'] = $walletpoint-$this->cart->getWallets();
+				$data['wallet'] = $walletpoint - $this->cart->getWallets();
+			}else {
+				$data['wallet']= '00.00';	
 			}
 		}
+		else{
+			$data['wallet']= '00.00';
+		}
+		$data['adjust'] = $this->cart->getWallets();
 		$data['cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 

@@ -321,7 +321,20 @@ class Cart {
 		foreach ($this->getProducts() as $product) {
 			$total += $product['total'];
 		}
+		if ($this->customer->isLogged()){
+			$wallet_point = $this->getWallets();
+		}
+		else{
+			$wallet_point =0;
+		}
 
+		if($total>0){
+			$total = $total - $wallet_point;
+		}
+		else{
+			$total = 0;
+		}
+		
 		return $total;
 	}
 
@@ -405,38 +418,47 @@ class Cart {
 		return false;
 	}
 	// --------- Wallet DB Start ---------- //
-public function getRate(){
-	$query = $this->db->query("SELECT reward_point, is_percentage, is_fixed FROM " . DB_PREFIX . "rewards_setting");
-	return $query->row;	
-}
-public function getRewards(){
-	$sql = "SELECT * FROM ". DB_PREFIX ."reward_rate_setting ORDER BY id ASC LIMIT 1";
-	$query= $this->db->query($sql);
-	return $query->row;
-}
-//--------- Wallet DB END ----------//
-//--------- Wallet START ----------//
-public function getWallets(){
-	$total_value = 0;
-
-	$max_amount =  $this->getRewards();
-		$max_value = $max_amount['max_amount'];
-		$percentage_value = $max_amount['percentage_value'];
-		$fixed_value= $max_amount['fixed_value'];
-
-	$enable_rate = $this->getRate(['is_percentage, is_fixed']);
-		$is_percentage = $enable_rate['is_percentage'];
-		$is_fixed = $enable_rate['is_fixed'];		
-			if($is_percentage==1){
-				if($max_value<=$this->getTotal()){
-					$total_value =$this->getTotal()*$percentage_value/100;
-				}	
-			}
-			else if($is_fixed==1){
-				if($max_value<=$this->getTotal()){
-					$total_value = $fixed_value;
-				}	
-			}
-	return $total_value;
+	public function getRate(){
+		$query = $this->db->query("SELECT reward_point, is_percentage, is_fixed FROM " . DB_PREFIX . "rewards_setting");
+		return $query->row;	
 	}
-}
+	public function getRewards(){
+		$sql = "SELECT * FROM ". DB_PREFIX ."reward_rate_setting ORDER BY id ASC LIMIT 1";
+		$query= $this->db->query($sql);
+		return $query->row;
+	}
+	//--------- Wallet DB END ----------//
+	//--------- Wallet START ----------//
+	public function getWallets(){
+		$total_value = 0;
+
+		$max_amount =  $this->getRewards();
+			$max_value = $max_amount['max_amount'];
+			$percentage_value = $max_amount['percentage_value'];
+			$fixed_value= $max_amount['fixed_value'];
+
+		$enable_rate = $this->getRate(['is_percentage, is_fixed']);
+			$is_percentage = $enable_rate['is_percentage'];
+			$is_fixed = $enable_rate['is_fixed'];		
+				if($is_percentage==1){
+					if($max_value<=$this->getTotal()){
+						$total_value =$this->getTotal()*$percentage_value/100;
+					}	
+				}
+				else if($is_fixed==1){
+					if($max_value<=$this->getTotal()){
+						$total_value = $fixed_value;
+					}	
+				}
+		return $total_value;
+		}
+		
+	}
+// 	function test() {
+// 		print_r($this->data);
+// 	}
+// }
+
+
+// $c =new Cart(5);
+// $c->test();

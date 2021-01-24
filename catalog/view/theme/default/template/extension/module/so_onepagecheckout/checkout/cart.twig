@@ -58,6 +58,10 @@
                 {% endfor %}
                 </tbody>
                 <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-left">ADJUSTMENT-AMOUNT:</td>
+                        <td class="text-right">{{ adjust }}</td>
+                    </tr>
                 {% for total in totals %}
                     <tr>
                         <td colspan="4" class="text-left">{{ total.title }}:</td>
