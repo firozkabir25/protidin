@@ -53,7 +53,7 @@ class ControllerCheckoutCheckout extends Controller {
 			'text' => $this->language->get('heading_title'),
 			'href' => $this->url->link('checkout/checkout', '', true)
 		);
-		$data['adjust'] = $this->cart->getWallets();
+		
 		$data['text_checkout_option'] = sprintf($this->language->get('text_checkout_option'), 1);
 		$data['text_checkout_account'] = sprintf($this->language->get('text_checkout_account'), 2);
 		$data['text_checkout_payment_address'] = sprintf($this->language->get('text_checkout_payment_address'), 2);
@@ -85,6 +85,7 @@ class ControllerCheckoutCheckout extends Controller {
 
 		$data['shipping_required'] = $this->cart->hasShipping();
 
+		$data['wallet_point'] = $this->cart->getWallets();
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');

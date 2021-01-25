@@ -585,3 +585,8 @@
 2021-01-24 8:42:35 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611481355): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
 2021-01-24 9:50:24 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611485424): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
 2021-01-24 10:13:14 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611486794): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-25 4:41:32 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611553292): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-25 4:41:44 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611553303): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-25 6:08:52 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611558532): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-25 6:37:25 - PHP Warning:  unlink(/opt/lampp/htdocs/protidin/system/storage/cache/cache.catalog.language.1611560245): No such file or directory in /opt/lampp/htdocs/protidin/system/library/cache/file.php on line 68
+2021-01-25 10:21:27 - PHP Notice:  Undefined index: name in /opt/lampp/htdocs/protidin/admin/controller/extension/total/adjust_amount.php on line 152

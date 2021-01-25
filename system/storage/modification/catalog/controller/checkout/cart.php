@@ -255,10 +255,10 @@ class ControllerCheckoutCart extends Controller {
 				}
 			}
 			if ($this->customer->isLogged()){
-				$data['adjust']= $this->cart->getWallets();
+				$data['wallet_point']= $this->cart->getWallets();
 			}
 			else{
-				$data['adjust'] =0;
+				$data['wallet_point'] =0;
 			}
 
 			$data['column_left'] = $this->load->controller('common/column_left');
@@ -522,10 +522,10 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			if ($this->customer->isLogged()){
-				$data['adjust'] = $this->cart->getWallets();
+				$data['wallet_point'] = $this->cart->getWallets();
 			}
 			else{
-				$data['adjust']= '00.00';
+				$data['wallet_point']= '00.00';
 			}
 
 			//---------Wallet Percent-------------//
@@ -535,7 +535,7 @@ class ControllerCheckoutCart extends Controller {
 			else{
 				$total_value = 0;
 			}
-			$data['adjust'] = $this->cart->getWallets();
+			$data['wallet_point'] = $this->cart->getWallets();
 
 			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total_value, $this->session->data['currency']));
 		}

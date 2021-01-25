@@ -260,6 +260,6 @@ class __TwigTemplate_144dd7f40a604f550371080986a56a222222f7693a4b16f14f70defa2a5
 
     public function getSourceContext()
     {
-        return new Source("", "so-buyshop/template/extension/module/so_tools/infocart.twig", "/home/azhkhn/public_html/protidin.com.bd/catalog/view/theme/so-buyshop/template/extension/module/so_tools/infocart.twig");
+        return new Source("", "so-buyshop/template/extension/module/so_tools/infocart.twig", "/opt/lampp/htdocs/protidin/catalog/view/theme/so-buyshop/template/extension/module/so_tools/infocart.twig");
     }
 }

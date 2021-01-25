@@ -212,28 +212,23 @@ class __TwigTemplate_87a3843ef66f17bfe9d5591f5b7f1453e141d97d9fc83dc2212beb91c2f
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 59
         echo "                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan=\"4\" class=\"text-left\">ADJUSTMENT-AMOUNT:</td>
-                        <td class=\"text-right\">";
-        // line 63
-        echo ($context["adjust"] ?? null);
-        echo "</td>
-                    </tr>
                 ";
-        // line 65
+        // line 66
+        echo "                <tfoot>
+                ";
+        // line 67
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["totals"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["total"]) {
-            // line 66
+            // line 68
             echo "                    <tr>
                         <td colspan=\"4\" class=\"text-left\">";
-            // line 67
-            echo twig_get_attribute($this->env, $this->source, $context["total"], "title", [], "any", false, false, false, 67);
+            // line 69
+            echo twig_get_attribute($this->env, $this->source, $context["total"], "title", [], "any", false, false, false, 69);
             echo ":</td>
                         <td class=\"text-right\">";
-            // line 68
-            echo twig_get_attribute($this->env, $this->source, $context["total"], "text", [], "any", false, false, false, 68);
+            // line 70
+            echo twig_get_attribute($this->env, $this->source, $context["total"], "text", [], "any", false, false, false, 70);
             echo "</td>
                     </tr>
                 ";
@@ -241,20 +236,20 @@ class __TwigTemplate_87a3843ef66f17bfe9d5591f5b7f1453e141d97d9fc83dc2212beb91c2f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['total'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 73
         echo "                </tfoot>
             </table>
         </div>
         <div id=\"payment-confirm-button\" class=\"payment-";
-        // line 74
-        echo twig_get_attribute($this->env, $this->source, ($context["SoUtils"] ?? null), "getProperty", [0 => ($context["session_data"] ?? null), 1 => "payment_method.code"], "method", false, false, false, 74);
+        // line 76
+        echo twig_get_attribute($this->env, $this->source, ($context["SoUtils"] ?? null), "getProperty", [0 => ($context["session_data"] ?? null), 1 => "payment_method.code"], "method", false, false, false, 76);
         echo "\">
             <h2 class=\"secondary-title\"><i class=\"fa fa-credit-card\"></i>";
-        // line 75
+        // line 77
         echo ($context["text_payment_detail"] ?? null);
         echo "</h2>
             ";
-        // line 76
+        // line 78
         echo ($context["payment"] ?? null);
         echo "
         </div>
@@ -276,7 +271,7 @@ class __TwigTemplate_87a3843ef66f17bfe9d5591f5b7f1453e141d97d9fc83dc2212beb91c2f
 
     public function getDebugInfo()
     {
-        return array (  258 => 76,  254 => 75,  250 => 74,  245 => 71,  236 => 68,  232 => 67,  229 => 66,  225 => 65,  220 => 63,  214 => 59,  205 => 56,  201 => 55,  195 => 52,  192 => 51,  187 => 50,  178 => 47,  174 => 46,  169 => 43,  161 => 41,  158 => 40,  150 => 38,  148 => 37,  141 => 35,  136 => 32,  131 => 30,  127 => 29,  124 => 28,  121 => 27,  111 => 25,  107 => 23,  103 => 22,  96 => 21,  84 => 19,  82 => 18,  78 => 16,  74 => 15,  67 => 11,  63 => 10,  59 => 9,  55 => 8,  40 => 2,  37 => 1,);
+        return array (  253 => 78,  249 => 77,  245 => 76,  240 => 73,  231 => 70,  227 => 69,  224 => 68,  220 => 67,  217 => 66,  214 => 59,  205 => 56,  201 => 55,  195 => 52,  192 => 51,  187 => 50,  178 => 47,  174 => 46,  169 => 43,  161 => 41,  158 => 40,  150 => 38,  148 => 37,  141 => 35,  136 => 32,  131 => 30,  127 => 29,  124 => 28,  121 => 27,  111 => 25,  107 => 23,  103 => 22,  96 => 21,  84 => 19,  82 => 18,  78 => 16,  74 => 15,  67 => 11,  63 => 10,  59 => 9,  55 => 8,  40 => 2,  37 => 1,);
     }
 
     public function getSourceContext()

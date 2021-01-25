@@ -57,11 +57,13 @@
                     </tr>
                 {% endfor %}
                 </tbody>
-                <tfoot>
-                    <tr>
+                {# <tfoot>
+                     <tr>
                         <td colspan="4" class="text-left">ADJUSTMENT-AMOUNT:</td>
-                        <td class="text-right">{{ adjust }}</td>
+                        <td class="text-right">{{ wallet_point }}</td>
                     </tr>
+                </tfoot> #}
+                <tfoot>
                 {% for total in totals %}
                     <tr>
                         <td colspan="4" class="text-left">{{ total.title }}:</td>
