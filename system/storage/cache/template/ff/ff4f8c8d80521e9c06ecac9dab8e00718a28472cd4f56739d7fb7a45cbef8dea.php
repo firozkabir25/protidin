@@ -2368,6 +2368,6 @@ var change_price = function(id, new_price) {\$(id).html(new_price);}
 
     public function getSourceContext()
     {
-        return new Source("", "so-buyshop/template/product/product.twig", "/home/azhkhn/public_html/protidin.com.bd/system/storage/modification/catalog/view/theme/so-buyshop/template/product/product.twig");
+        return new Source("", "so-buyshop/template/product/product.twig", "/opt/lampp/htdocs/protidin/system/storage/modification/catalog/view/theme/so-buyshop/template/product/product.twig");
     }
 }

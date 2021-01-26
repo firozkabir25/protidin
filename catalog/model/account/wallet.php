@@ -10,18 +10,24 @@ class ModelAccountWallet extends Model{
         return $query->row;
         
     }
-    public function getEnableRate(){
-        $query = $this->db->query("SELECT reward_point, is_percentage, is_fixed FROM " . DB_PREFIX . "rewards_setting");
+    
+    public function updateRewardPoint($reward_point,$id){
+        $sql = "UPDATE " . DB_PREFIX . "customer_rewards SET reward_point= ". (double)$reward_point ." WHERE customer_id = ". (int)$id ."";
+        $query = $this->db->query($sql);
         return $query->row;
-        
     }
+    // public function getEnableRate(){
+    //     $query = $this->db->query("SELECT reward_point, is_percentage, is_fixed FROM " . DB_PREFIX . "rewards_setting");
+    //     return $query->row;
+        
+    // }
 
-    public function getRewardRate(){
-        $sql = "SELECT * FROM ". DB_PREFIX ."reward_rate_setting ORDER BY id ASC LIMIT 1";
-        $query= $this->db->query($sql);
-        return $query->row;
+    // public function getRewardRate(){
+    //     $sql = "SELECT * FROM ". DB_PREFIX ."reward_rate_setting ORDER BY id ASC LIMIT 1";
+    //     $query= $this->db->query($sql);
+    //     return $query->row;
 
-    } 
+    // } 
 }
 
 

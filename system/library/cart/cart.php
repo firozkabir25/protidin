@@ -321,20 +321,6 @@ class Cart {
 		foreach ($this->getProducts() as $product) {
 			$total += $product['total'];
 		}
-		if ($this->customer->isLogged()){
-			$wallet_point = $this->getWallets();
-		}
-		else{
-			$wallet_point =0;
-		}
-
-		if($total>0){
-			$total = $total - $wallet_point;
-		}
-		else{
-			$total = 0;
-		}
-		
 		return $total;
 	}
 
@@ -462,3 +448,17 @@ class Cart {
 
 // $c =new Cart(5);
 // $c->test();
+
+// if ($this->customer->isLogged()){
+// 	$wallet_point = $this->getWallets();
+// }
+// else{
+// 	$wallet_point =0;
+// }
+
+// if($total>0){
+// 	$total = $total - $wallet_point;
+// }
+// else{
+// 	$total = 0;
+// }

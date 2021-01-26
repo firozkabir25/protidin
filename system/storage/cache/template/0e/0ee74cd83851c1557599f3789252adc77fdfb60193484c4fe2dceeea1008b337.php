@@ -408,6 +408,6 @@ class __TwigTemplate_251087f4ebaea4eaffb0e2e10a128f6e490de8a9331ca1e3a17b2e7af4b
 
     public function getSourceContext()
     {
-        return new Source("", "so-mobile/template/common/header.twig", "/home/azhkhn/public_html/protidin.com.bd/system/storage/modification/catalog/view/theme/so-mobile/template/common/header.twig");
+        return new Source("", "so-mobile/template/common/header.twig", "/opt/lampp/htdocs/protidin/system/storage/modification/catalog/view/theme/so-mobile/template/common/header.twig");
     }
 }

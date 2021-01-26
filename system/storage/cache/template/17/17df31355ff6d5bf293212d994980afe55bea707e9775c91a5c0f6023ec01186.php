@@ -231,6 +231,6 @@ class __TwigTemplate_7833439c2f7db00514f02a7ad033687f3862d1dff3f48d43a28c7c2fccd
 
     public function getSourceContext()
     {
-        return new Source("", "default/template/common/cart.twig", "/home/azhkhn/public_html/protidin.com.bd/system/storage/modification/catalog/view/theme/default/template/common/cart.twig");
+        return new Source("", "default/template/common/cart.twig", "/opt/lampp/htdocs/protidin/system/storage/modification/catalog/view/theme/default/template/common/cart.twig");
     }
 }

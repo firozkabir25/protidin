@@ -35,10 +35,9 @@ class ControllerCommonCart extends Controller {
 			
 					// We have to put the totals in an array so that they pass by reference.
 					$this->{'model_extension_total_' . $result['code']}->getTotal($total_data);
-				}
-				
+				}	
 			}
-			
+
 			$sort_order = array();
 
 			foreach ($totals as $key => $value) {
@@ -47,20 +46,7 @@ class ControllerCommonCart extends Controller {
 
 			array_multisort($sort_order, SORT_ASC, $totals);
 		}
-		//---------Wallet Percent beside user name and loging wallet-------------//
-			// if ($this->customer->isLogged()){
-			// 	$wallet_point = $this->cart->getWallets();
-			// }
-			// else{
-			// 	$wallet_point =0;
-			// }
-	
-			// 	if($total>0){
-			// 		$total = $total - $wallet_point;
-			// 	}
-			// 	else{
-			// 		$total;
-			// 	}
+		
 		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
 
 		$this->load->model('tool/image');
@@ -145,20 +131,23 @@ class ControllerCommonCart extends Controller {
 			);
 		}
 		if ($this->customer->isLogged()){
-			$data['user'] = $this->customer->getFirstName()." ". $this->customer->getLastName();
+			$data['user'] ="USER:"." ".$this->customer->getFirstName()." ". $this->customer->getLastName();
 			if (isset($this->session->data['customer_id']))	{
-				
+				$wallet_text = "Wallet: ";
 				$point = $this->model_account_wallet->getRewardPoint($this->session->data['customer_id']);
 				$walletpoint = $point['reward_point'];
-				$data['wallet'] = $walletpoint - $this->cart->getWallets();
-			}else {
-				$data['wallet']= '00.00';	
+				$wallet_point = $walletpoint - $this->cart->getWallets();
+
+				$data['wallet'] = $wallet_text. $wallet_point;
 			}
+			// else {
+			// 	$data['wallet']= '';	
+			// }
 		}
-		else{
-			$data['wallet']= '00.00';
-		}
-		$data['adjust'] = $this->cart->getWallets();
+		// else{
+		// 	$data['wallet']= '';
+		// }
+
 		$data['cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', true);
 

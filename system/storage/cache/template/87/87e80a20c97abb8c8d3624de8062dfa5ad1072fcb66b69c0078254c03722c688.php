@@ -1093,6 +1093,6 @@ function reinitView() {
 
     public function getSourceContext()
     {
-        return new Source("", "so-buyshop/template/soconfig/listing.twig", "/home/azhkhn/public_html/protidin.com.bd/system/storage/modification/catalog/view/theme/so-buyshop/template/soconfig/listing.twig");
+        return new Source("", "so-buyshop/template/soconfig/listing.twig", "/opt/lampp/htdocs/protidin/system/storage/modification/catalog/view/theme/so-buyshop/template/soconfig/listing.twig");
     }
 }
