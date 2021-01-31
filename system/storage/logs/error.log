@@ -608,3 +608,16 @@
 2021-01-26 10:55:14 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 144
 2021-01-26 10:55:44 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 144
 2021-01-26 10:55:44 - PHP Warning:  A non-numeric value encountered in /opt/lampp/htdocs/protidin/system/storage/modification/catalog/controller/common/cart.php on line 144
+2021-01-31 9:44:00 - PHP Notice:  Undefined index: coupon_product in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3690
+2021-01-31 9:46:23 - PHP Notice:  Undefined index: product in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3690
+2021-01-31 9:47:17 - PHP Notice:  Undefined index: product in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3690
+2021-01-31 9:48:57 - PHP Notice:  Undefined index: product in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3690
+2021-01-31 9:51:19 - PHP Notice:  Undefined index: product in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3690
+2021-01-31 9:51:19 - PHP Notice:  Undefined index: coupon_category in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3728
+2021-01-31 9:52:03 - PHP Notice:  Array to string conversion in /opt/lampp/htdocs/protidin/admin/model/setting/setting.php on line 69
+2021-01-31 9:52:51 - PHP Notice:  Undefined index: product in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3690
+2021-01-31 9:52:51 - PHP Notice:  Undefined index: coupon_category in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3728
+2021-01-31 9:54:03 - PHP Notice:  Undefined index: product in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3690
+2021-01-31 9:54:03 - PHP Notice:  Undefined index: coupon_category in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3728
+2021-01-31 9:56:51 - PHP Notice:  Undefined index: product in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3689
+2021-01-31 9:56:51 - PHP Notice:  Undefined index: coupon_category in /opt/lampp/htdocs/protidin/system/storage/cache/template/91/91d09a88ebe8e9fff7f30ed375b224fd5ea99d2412bb2ec36ccdc6da5feb3a61.php on line 3727

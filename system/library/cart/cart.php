@@ -419,7 +419,7 @@ class Cart {
 		$total_value = 0;
 
 		$max_amount =  $this->getRewards();
-			$max_value = $max_amount['max_amount'];
+			$min_value = $max_amount['min_amount'];
 			$percentage_value = $max_amount['percentage_value'];
 			$fixed_value= $max_amount['fixed_value'];
 
@@ -427,12 +427,12 @@ class Cart {
 			$is_percentage = $enable_rate['is_percentage'];
 			$is_fixed = $enable_rate['is_fixed'];		
 				if($is_percentage==1){
-					if($max_value<=$this->getTotal()){
+					if($min_value<=$this->getTotal()){
 						$total_value =$this->getTotal()*$percentage_value/100;
 					}	
 				}
 				else if($is_fixed==1){
-					if($max_value<=$this->getTotal()){
+					if($min_value<=$this->getTotal()){
 						$total_value = $fixed_value;
 					}	
 				}
